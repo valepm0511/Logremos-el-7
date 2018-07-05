@@ -26,9 +26,7 @@ Estos mensajes podrán ser calificados según el interés y recepción de los us
 
 ## Diseño
 
-### Prototipo
-
-### Interfaz de usuario
+![Prototipo v/s Interfaz](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/prototipoInterfaz.png)
 
 ## Guía de instalación
 
