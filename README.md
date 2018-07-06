@@ -49,6 +49,12 @@ Considerando las cualidades y lo ofrecido por cada aplicación, findTeach fue la
 
 ![Prototipo v/s Interfaz](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/prototipoInterfaz.png)
 
+## Entrevistas
+[Guía de entrevistas]
+(https://docs.google.com/document/d/1d7tMGaJuhabsSTLetdZoHSJZrzxRksBSM-W8PC3iWBI/edit?usp=sharing)
+[Entrevistas]
+(https://docs.google.com/document/d/1XPUS9EaGQ08Rnm_ULuJXqA0-Qn_xf5akVpcNTNQQlMc/edit?usp=sharin
+
 ## Guía de instalación
 
 ### Git
