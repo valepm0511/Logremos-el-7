@@ -22,7 +22,28 @@ Estos mensajes podrán ser calificados según el interés y recepción de los us
 
 ## Benchmark
 
+Al comprar ofertas del mercado, respecto a aplicaciones del mismo ámbito educacional y que ofrecen clases particulares, se compararon 4 aplicaciones para obtener la información útil para nuestra aplicación.
 
+Las aplicaciones o paginas web comparadas fueron:
+
+findTeacher: Es una aplicación española, no funcional en su totalidad, que facilita la búsqueda de profesores que deseen realizar clases y alumnos que requieren de estas.
+Como objetivo tiene el conectar por cercanía y una amplia gama de asignaturas, ayudando a encontrara un profesor rápidamente.
+
+tutordoctor: Es una pagina web Chilena que ofrece tutorías a domicilio en todos los niveles y una amplia gama de asignaturas, en la cual se realiza la asignación de un tutor según una entrevista previa y proponiendo la incorporación como tutor a su compañía.
+
+Sácate un 7: Es una pagina web Chilena que ofrece tutorías a domicilio a diferentes niveles escolares y diferentes asignaturas, en la cual se realiza la asignación de un tutor luego de llamar e indicar la asignatura y proponiendo la incorporación como tutor a su compañía.
+
+tutoruchile: Es una pagina web Chilena que ofrece tutorías a domicilio en diversos niveles y diferentes asignaturas, en la cual se realiza la asignación de un tutor estudiante o egresado de la Universidad de Chile, proponiendo diferentes planes de pago y centrados en liceos emblemáticos de Santiago.
+
+![Benchmarkin](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/bench1.png)
+
+Al contrastar las características de estas aplicaciones se obtuvo la siguiente tabla comparativa.
+
+![Tabla Comparativa](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/tabla.png)
+
+Considerando las cualidades y lo ofrecido por cada aplicación, findTeach fue la que más se asemeja a las expectativas y visión del equipo de desarrollo de la aplicación social network “Logremos el 7”, pudiendo obtener como posible referencia su diseño y utilidades para nuestro proyecto mostradas en la siguiente imagen. 
+
+![findTeacher](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/bench2.png)
 
 ## Diseño
 
