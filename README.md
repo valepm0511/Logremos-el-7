@@ -58,10 +58,18 @@ Considerando las cualidades y lo ofrecido por cada aplicación, findTeach fue la
 ![Prototipo v/s Interfaz](https://github.com/NatalyVerdugoNogue/scl-2018-05-bc-core-am-socialnetwork/raw/master/img-README/benchmark/prototipoInterfaz.png)
 
 ## Entrevistas
-[Guía de entrevistas]
-(https://docs.google.com/document/d/1d7tMGaJuhabsSTLetdZoHSJZrzxRksBSM-W8PC3iWBI/edit?usp=sharing)
-[Entrevistas]
-(https://docs.google.com/document/d/1XPUS9EaGQ08Rnm_ULuJXqA0-Qn_xf5akVpcNTNQQlMc/edit?usp=sharin
+
+Nuestra entrevista se enfocó en la experiencia de nuestros posibles usuarios para idear nuestra app de manera en la que el intercambio de conocimiendo se genere de la manera más óptima posible. 
+Una observación importante en la que coinciden todos los entrevistados es que, para ellos es importante el interés (o amor por el conocimiento, como mencionó un entrevistado), tanto por parte de profesores como por parte del alumno. Para prevenir situaciones incómodas como las descritas en la entrevista, esperamos poder desarrollar en nuestra interface un espacio en el cual sea visible ese interés, a través de la data que registren los posibles usuarios.
+
+Encuesta:
+[https://docs.google.com/forms/d/1AcmUWJ6EbFJvwO8Mam7XHUFcl2eyrq88XDusFd3eXUg/prefill]
+
+Guía de entrevistas:
+[https://docs.google.com/document/d/1d7tMGaJuhabsSTLetdZoHSJZrzxRksBSM-W8PC3iWBI/edit?usp=sharing]
+
+Entrevistas:
+[https://docs.google.com/document/d/1XPUS9EaGQ08Rnm_ULuJXqA0-Qn_xf5akVpcNTNQQlMc/edit?usp=sharin]
 
 ## Guía de instalación
 
