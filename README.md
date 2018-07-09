@@ -1,8 +1,16 @@
 # Social Network
 
+## Preámbulo
+
+A lo largo del tiempo, los estudiantes han tenido la necesidad de realizarle consultas o aclarar dudas en ámbitos académicos con sus profesores o docentes, pero no siempre ha sido fácil obtener una respuesta fuera del salón de clases, a pesar de la masificación de internet en los hogares o el fácil acceso a través de cualquier dispositivo no es lo mismo que interactuar directamente con un profesional de la materia.
+Es así que la finalidad del proyecto, es lograr la interacción entre profesores y alumnos en una misma plataforma, con lo cual nace la idea “Logremos el 7”, una red social llamada directamente a que los estudiantes puedan relacionarse, conversar, preguntar y resolver sus dudas con profesionales, y a su vez los profesionales poder ofrecer sus servicios de clases particulares enfocadas en brindar las mejores prácticas educativas según la personalidad, disponibilidad y necesidad específica del estudiante.
+
+
 ## Introducción
 
-## Preámbulo
+Evaluando posibles necesidades de la sociedad como es la educación, llegamos a la conclusión que diseñar una red social orientada a mejorar el rendimiento académico de nuestros estudiantes sería una gran contribución a todo el ámbito estudiantil, abarcando profesores/docentes y estudiantes. 
+Si pensamos en una red social podemos pensar en conectividad, y creación de lazos, los mismos que muchas veces hacen falta para que los estudiantes tengan más seguridad y decisión a la hora de enfrentarse a un problema académico, una presentación en público un simple control. Esta red social, llamada “Logremos el 7”, tiene como objetivo crear esos lazos entre estudiantes y profesores, con la finalidad de que ambos se ayuden y contribuyan a una mejoría en la educación.
+
 
 ## Definición del producto
 
@@ -85,8 +93,8 @@ Descarga Git de [git-scm.com][3] y sigue las instrucciones.
 Si no lo tienes ya instalado, git debería estar disponible a través del administrador de paquetes,
 prueba con:
 
-   sudo apt install git
-   sudo yum install git
+sudo apt install git
+sudo yum install git
 
 ## Dependencias
 
