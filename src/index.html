@@ -1,89 +1,52 @@
 <!DOCTYPE>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!--css Bootstrap-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<!--fontAwesome-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<!--css-->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-	<script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--css Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <!--fontAwesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <!--css-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
     // Initialize Firebase
     var config = {
-    	apiKey: "AIzaSyC188VRYWdZLPrqPDF1d2Oo0qLBrYrU1hk",
-    	authDomain: "socialnetworklaboratoria.firebaseapp.com",
-    	databaseURL: "https://socialnetworklaboratoria.firebaseio.com",
-    	projectId: "socialnetworklaboratoria",
-    	storageBucket: "socialnetworklaboratoria.appspot.com",
-    	messagingSenderId: "36860826357"
+      apiKey: "AIzaSyC188VRYWdZLPrqPDF1d2Oo0qLBrYrU1hk",
+      authDomain: "socialnetworklaboratoria.firebaseapp.com",
+      databaseURL: "https://socialnetworklaboratoria.firebaseio.com",
+      projectId: "socialnetworklaboratoria",
+      storageBucket: "socialnetworklaboratoria.appspot.com",
+      messagingSenderId: "36860826357"
     };
     firebase.initializeApp(config);
   </script>
   <title>Logremos el 7</title>
 </head>
+
 <body>
-	<!--INICIO LOGIN-->
-	<div class="containerLogin" id="counter">
-		<div class="container pt-5">
-			<h1 class="titleSize text-center pt-sm-2 pt-lg-5">Logremos el 7</h1>
-			<h2 class="display-4 text-center text-white titleSizeCuenta">Crear Cuenta</h2>
-			<div class="row justify-content-center pt-3 p-0">
-				<div class="col-12 col-md-8 col-sm-12 col-lg-5">
-					<form class="form-inline">
-						<div class="col-12 col-md-12 mb-2">
-							<label class="sr-only" for="inlineFormInputGroupUsername2">Correo Electrónico</label>
-							<div class="input-group mb-2 mr-sm-2">
-								<div class="input-group-prepend">
-									<div class="input-group-text"><i class="fas fa-user"></i></div>
-								</div>
-								<input type="text" class="form-control" id="makeMail" placeholder="Correo Electrónico">
-							</div>
-						</div>
-						<div class="col-12 col-md-12 mb-2">
-							<label class="sr-only" for="inlineFormInputGroupUsername2">Contraseña</label>
-							<div class="input-group mb-2 mr-sm-2">
-								<div class="input-group-prepend">
-									<div class="input-group-text"><i class="fas fa-lock"></i></div>
-								</div>
-								<input type="password" class="form-control" id="makePassword" placeholder="Contraseña">
-							</div>
-						</div>
-						<div class="container">
-							<div class="row mt-2">
-								<div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-									<button type="submit" class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Crear Cuenta</button>
-								</div>
-							</div>
-							<div class="row mt-2">
-								<div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-									<button type="button" class="btn btn-primary mb-2 col-12 btn-style_fb" onclick="loginFace()"><i class="fab fa-facebook-square"></i>Iniciar Sesión con Facebook</button>
-								</div>
-							</div> 
-							<!-- <div class="row mt-2">
-								<div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-									<button type="submit" class="btn btn-primary mb-2 col-12 btn-style_g"><i class="fab fa-google-plus-square"></i> Sesión con Google+</button>
-								</div>
-							</div> -->
-						</div>
-					</form>
-					<!--<p class="text-center text-white mt-2 enlace_style"><a href="#">¿Olvidaste tu contraseña?</a></p> -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--FIN LOGIN-->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	<!-- js -->
-	<script src="js/data.js"></script>
-	<script src="js/view.js"></script>
-	<script src="js/controller.js"></script>
+  <!--Div Contenedor-->
+  <div id="counter" class="containerLogin">
+    <div class="text-center imgLoad"></div>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <!-- js -->
+  <script src="js/data.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
 </body>
+
 </html>
