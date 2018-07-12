@@ -1,70 +1,86 @@
-.containerLogin{
+.containerLogin {
 	background: url("../img/fondo1-1.jpg")no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
 	border: 20px groove #9C644B;
 }
-.containerLogin img{
+
+.containerLogin img {
 	width: 100vw;
 	height: 100vh;
 }
-.containerLogin h1{
+
+.containerLogin h1 {
 	font-family: "CoalhandLukeTRIAL";
 	color: #ffffff;
 }
-.titleSize{
+
+.titleSize {
 	font-size: 60px;
 }
-.btn-style{
+
+.btn-style {
 	background-color: #d3504a;
 	border: #d3504a;
-	box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+	box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
 }
-.btn-style_fb{
+
+.btn-style_fb {
 	background-color: #4267B2;
 	border: #4267B2;
-	box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+	box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
 }
 
-.btn-style_g{
+.btn-style_g {
 	background-color: #DD4B39;
 	border: #4267B2;
-	box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+	box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
 }
-.btn-style:hover{
-	background-color: #9C644B;
-	border: #9C644B;
-	color: #ffffff;
-}
-.btn-style_fb:hover{
-	background-color: #9C644B;
-	border: #9C644B;
-	color: #ffffff;
-}
-.btn-style_g:hover{
-	background-color: #9C644B;
-	border: #9C644B;
-	color: #ffffff;
-}
-.btn-style_fb i{
-	margin-left: -2px;
-	padding-right: 5px; 
 
-}
-.btn-style_g i{
-	margin-left: -2px;
-	padding-right: 5px; 
-
-}
-.enlace_style a{
+.btn-style:hover {
+	background-color: #9C644B;
+	border: #9C644B;
 	color: #ffffff;
 }
-.titleSizeCuenta{
+
+.btn-style_fb:hover {
+	background-color: #9C644B;
+	border: #9C644B;
+	color: #ffffff;
+}
+
+.btn-style_g:hover {
+	background-color: #9C644B;
+	border: #9C644B;
+	color: #ffffff;
+}
+
+.btn-style_fb i {
+	margin-left: -2px;
+	padding-right: 5px;
+}
+
+.btn-style_g i {
+	margin-left: -2px;
+	padding-right: 5px;
+}
+
+.enlace_style a {
+	color: #ffffff;
+}
+
+.titleSizeCuenta {
 	font-size: 30px;
 }
 
-@font-face{
+@font-face {
 	font-family: "CoalhandLukeTRIAL";
 	src: url("../fonts/CoalhandLukeTRIAL.ttf"); 
+}
+.imgLoad {
+	background: url("https://loading.io/spinners/gears/lg.dual-gear-loading-icon.gif")no-repeat;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
 }
