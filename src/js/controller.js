@@ -23,6 +23,7 @@ window.controller.validateLogin = (email, password) => {
       message: 'La contraseña debe contener minimo 6 caracteres'
     };
   };
+
   return {
     valid: true,
     message: ''

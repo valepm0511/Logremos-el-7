@@ -39,12 +39,6 @@ window.view.register = () => {
                   <button type="submit" class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Crear Cuenta</button>
                 </div>
               </div>
-              <div class="row mt-2">
-                <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                  <button type="button" class="btn btn-primary mb-2 col-12 btn-style_fb" onclick="loginFace()">
-                    <i class="fab fa-facebook-square"></i>Iniciar Sesión con Facebook</button>
-                </div>
-              </div>
               <!-- <div class="row mt-2">
                 <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
                   <button type="submit" class="btn btn-primary mb-2 col-12 btn-style_g"><i class="fab fa-google-plus-square"></i> Sesión con Google+</button>
@@ -57,3 +51,5 @@ window.view.register = () => {
       </div>
      </div>`;
 };
+// <button type="button" onclick="window.data.logOut()">Cerrar Sesión</button>
+window.view.register();

@@ -57,3 +57,12 @@ window.data.loginFace = () => {
       console.log('error de firebase, mensaje > ' + error.message);
     });
 };
+
+// función para cerrar sesión
+window.data.logOut = () => {
+  firebase.auth().signOut()
+    .then(() => {
+    })
+    .catch(() => {
+    });
+};
