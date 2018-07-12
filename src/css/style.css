@@ -63,3 +63,8 @@
 .titleSizeCuenta{
 	font-size: 30px;
 }
+
+@font-face{
+	font-family: "CoalhandLukeTRIAL";
+	src: url("/fonts/CoalhandLukeTRIAL.ttf"); 
+}
