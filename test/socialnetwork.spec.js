@@ -1,3 +1,4 @@
+// test función window.controller.validateLogin
 describe('Create account with email and password', () => {
   it('Must return true with email and password', () => {
     const email = 'test@test.com';

@@ -1,5 +1,6 @@
 window.view = {};
 
+// Escritura de html de crear cuenta
 window.view.register = () => {
   // document.getElementById('counter').className = 'containerLogin';
   let divRegister = document.getElementById('counter');
