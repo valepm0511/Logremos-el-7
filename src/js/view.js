@@ -52,4 +52,4 @@ window.view.register = () => {
      </div>`;
 };
 // <button type="button" onclick="window.data.logOut()">Cerrar Sesión</button>
-window.view.register();
+// window.view.register();
