@@ -38,3 +38,17 @@ window.data.observer = () => {
   });
 };
 window.data.observer();
+
+function loginFace() {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  provider.setCustomParameters({
+    'display': 'popup'
+  });
+  firebase.auth().signInWithPopup(provider)
+    .then(() => {
+      console.log("login con facebook");
+    })
+    .catch((error) => {
+      console.log("error de firebase > " + error.code);
+      console.log("error de firebase, mensaje > " + error.message);
+    });
