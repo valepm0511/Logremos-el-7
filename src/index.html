@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC188VRYWdZLPrqPDF1d2Oo0qLBrYrU1hk",
+      authDomain: "socialnetworklaboratoria.firebaseapp.com",
+      databaseURL: "https://socialnetworklaboratoria.firebaseio.com",
+      projectId: "socialnetworklaboratoria",
+      storageBucket: "socialnetworklaboratoria.appspot.com",
+      messagingSenderId: "36860826357"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 </head>
+
 <body>
-  
+
+  <div id="counter">
+
+    <input type="email" placeholder="Ingresa email" id="makeMail">
+    <input type="password" placeholder="Ingresa contraseña" id="makePassword">
+    <button id="makeBtn" type="button" onclick="window.controller.register()">Crear</button>
+
+  </div>
+
+
+
+  <!-- js -->
+  <script src="js/data.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
+
 </body>
+
 </html>
