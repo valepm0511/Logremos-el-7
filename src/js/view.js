@@ -120,5 +120,5 @@ window.view.ingress = () => {
       </div>
     </div>`;
 };
-
+// funciona cambio
 window.view.ingress();

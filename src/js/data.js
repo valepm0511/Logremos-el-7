@@ -23,6 +23,7 @@ window.data.ingress = (connectMail, connectPassword) => {
 // función para observar usuario y ver status
 window.data.observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
+    console.log(user);
     let status = '';
     if (user) {
       status = 'activo';
