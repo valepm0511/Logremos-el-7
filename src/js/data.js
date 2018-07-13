@@ -9,16 +9,16 @@ window.data.register = (makeMail, makePassword) => {
   });
 };
 
+
 // función para ingresar con mail y password
-window.data.ingress = () => {
-  let connectMail = document.getElementById('connectMail').value;
-  let connectPassword = document.getElementById('connectPassword').value;
+window.data.ingress = (connectMail, connectPassword) => {
   firebase.auth().signInWithEmailAndPassword(connectMail, connectPassword).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('errorCode', errorCode, 'errorMessage', errorMessage);
   });
 };
+
 
 // función para observar usuario y ver status
 window.data.observer = () => {
@@ -42,6 +42,7 @@ window.data.observer = () => {
 };
 window.data.observer();
 
+
 // función para conectar con facebook
 window.data.loginFace = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
@@ -57,6 +58,7 @@ window.data.loginFace = () => {
       console.log('error de firebase, mensaje > ' + error.message);
     });
 };
+
 
 // función para cerrar sesión
 window.data.logOut = () => {

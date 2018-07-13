@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--css Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-  crossorigin="anonymous">
+    crossorigin="anonymous">
   <!--fontAwesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-  crossorigin="anonymous">
+    crossorigin="anonymous">
   <!--css-->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- firebase -->
@@ -48,7 +48,7 @@
                     <i class="fas fa-user"></i>
                   </div>
                 </div>
-                <input type="text" class="form-control" id="makeMail" placeholder="Correo Electrónico">
+                <input type="text" class="form-control" id="connectMail" placeholder="Correo Electrónico">
               </div>
             </div>
             <div class="col-12 col-md-12 mb-2">
@@ -59,34 +59,38 @@
                     <i class="fas fa-lock"></i>
                   </div>
                 </div>
-                <input type="password" class="form-control" id="makePassword" placeholder="Contraseña">
+                <input type="password" class="form-control" id="connectPassword" placeholder="Contraseña">
               </div>
             </div>
             <div class="container">
               <div class="row mt-2">
                 <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Iniciar Sesión</button>
+                  <button class="btn btn-primary mb-2 col-12 btn-style" type="button" id="connectBtn" onclick="window.controller.ingress()">Iniciar Sesión</button>
                 </div>
               </div>
               <div class="row mt-2">
                 <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style_fb"><i class="fab fa-facebook-square"></i>Facebook</button>
+                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style_fb" onclick="window.data.loginFace()">
+                    <i class="fab fa-facebook-square"></i>Facebook</button>
                 </div>
-              </div> 
+              </div>
               <div class="row mt-2">
                 <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style_g"><i class="fab fa-google-plus-square"></i>Google+</button>
+                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style_g">
+                    <i class="fab fa-google-plus-square"></i>Google+</button>
                 </div>
               </div>
             </div>
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-6 text-center m-auto">
-                  <button class="btnCreate pb-2 mt-3"><p>Crear Cuenta</p></button>
+                  <button class="btnCreate pb-2 mt-3">
+                    <p>Crear Cuenta</p>
+                  </button>
                 </div>
               </div>
             </div>
-            
+
           </form>
           <!--<p class="text-center text-white mt-2 enlace_style"><a href="#">¿Olvidaste tu contraseña?</a></p> -->
         </div>
@@ -97,11 +101,11 @@
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <!-- js -->
   <script src="js/data.js"></script>
   <script src="js/view.js"></script>

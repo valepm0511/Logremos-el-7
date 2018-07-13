@@ -36,7 +36,7 @@ window.view.register = () => {
             <div class="container">
               <div class="row mt-2">
                 <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                  <button type="submit" class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Crear Cuenta</button>
+                  <button class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Crear Cuenta</button>
                 </div>
               </div>
               <!-- <div class="row mt-2">

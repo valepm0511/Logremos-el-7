@@ -1,5 +1,6 @@
 window.controller = {};
 
+
 // función para validar mail
 window.controller.validateLogin = (email, password) => {
   const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -30,6 +31,7 @@ window.controller.validateLogin = (email, password) => {
   };
 };
 
+
 // función llegada mail y password, valida y registra o envia mensaje 
 window.controller.register = () => {
   let makeMail = document.getElementById('makeMail').value;
@@ -45,4 +47,17 @@ window.controller.register = () => {
   } else {
     alert(isValid.message);
   }
+};
+
+
+// función para hacer login
+window.controller.ingress = () => {
+  let connectMail = document.getElementById('connectMail').value;
+  let connectPassword = document.getElementById('connectPassword').value;
+  console.log(connectMail, connectPassword);
+
+  // llama a ingress en firebase
+  window.data.ingress(connectMail, connectPassword);
+  
+  // hacer un if con observador si es valido va a muro 
 };
