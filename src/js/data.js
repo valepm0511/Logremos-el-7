@@ -50,15 +50,16 @@ window.data.loginFace = () => {
   provider.setCustomParameters({
     'display': 'popup'
   });
+  let status;
   firebase.auth().signInWithPopup(provider)
-  .then(() => {
-    let status = 'activo con facebook';
-    console.log(status);
-  })
-  .catch((error) => {
-    console.log('error de firebase > ' + error.code);
-    console.log('error de firebase, mensaje > ' + error.message);
-  });
+    .then(() => {
+      status = 'activado desdes facebook';
+      console.log(status);
+    })
+    .catch((error) => {
+      console.log('error de firebase > ' + error.code);
+      console.log('error de firebase, mensaje > ' + error.message);
+    });
 };
 
 // funcion para conectar con google
@@ -68,14 +69,15 @@ window.data.loginGoogle = () => {
   provider.setCustomParameters({
     'login_hint': 'user@example.com'
   });
+  let status;
   firebase.auth().signInWithPopup(provider)
-  .then(() => {
-    let status = 'activo con google';
-    console.log(status);
-  }).catch(() => {
-   console.log('error de firebase > ' + error.code);
-   console.log('error de firebase, mensaje > ' + error.message);
- });
+    .then(() => {
+      status = 'activado desde google';
+      console.log(status);
+    }).catch(() => {
+      console.log('error de firebase > ' + error.code);
+      console.log('error de firebase, mensaje > ' + error.message);
+    });
 }
 
 
@@ -84,8 +86,6 @@ window.data.loginGoogle = () => {
 // función para cerrar sesión
 window.data.logOut = () => {
   firebase.auth().signOut()
-  .then(() => {
-  })
-  .catch(() => {
-  });
+    .then(() => {})
+    .catch(() => {});
 };
