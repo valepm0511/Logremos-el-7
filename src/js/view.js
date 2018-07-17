@@ -7,7 +7,9 @@ window.view.wall = () => {
   const wallMessage = window.controller.wall();
 
   let htmlWall =
-    `<!--sidebar-->
+    `<div class="container-fluid">
+    <div class="row">
+    <!--sidebar-->
   <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
     <nav class="navbar navbar-expand-lg flex-lg-column">
       <a class="navbar-brand" href="#">Menú</a>
@@ -71,7 +73,7 @@ window.view.wall = () => {
       // console.info('id', message.id);
 
       htmlWall +=
-      `<div class="col-lg-9">
+        `<div class="col-lg-9">
         <div class="row">
           <div class="col-12">
             <div class="float-left">
@@ -98,7 +100,8 @@ window.view.wall = () => {
     });
 
     let divWall = document.getElementById('counter');
-    divWall.innerHTML = htmlWall;
+    divWall.innerHTML = htmlWall + `</div>
+    </div>`;
   });
 };
 
