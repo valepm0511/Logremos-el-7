@@ -8,10 +8,11 @@ window.view.wall = () => {
 
   let htmlWall =
     `<!--sidebar-->
-  <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
-    <nav class="navbar navbar-expand-lg flex-lg-column">
-      <a class="navbar-brand" href="#">Menú</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    <div class="">
+      <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
+        <nav class="navbar navbar-expand-lg flex-lg-column">
+         <a class="navbar-brand" href="#">Menú</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +30,8 @@ window.view.wall = () => {
       </div>
     </nav>
   </div>
-  <section>
+  <!--menu post-->
+  <section class="containerWall">
     <h1 class="titleWall text-center">Logremos el 7</h1>
     <div class="row">
       <div class="col-12">
@@ -49,13 +51,13 @@ window.view.wall = () => {
         <button onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>
       </div>
     </div>
-  </section>`;
+  </section>
+  </div>`;
 
   wallMessage.then(messages => {
     messages.forEach(message => {
       const men = message.data();
       // console.info('id', message.id);
-
       htmlWall +=
         `<section>
         <div class="row">
