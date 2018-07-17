@@ -1,16 +1,15 @@
 <!DOCTYPE>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--css Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+  crossorigin="anonymous">
   <!--fontAwesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
+  crossorigin="anonymous">
   <!--css-->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- firebase -->
@@ -33,22 +32,79 @@
 
 <body>
   <!--Div Contenedor-->
-  <div id="counter" class="containerLogin">
-    <!-- Imagen de loading -->
-    <div class="text-center imgLoad"></div>
-  </div>
+  <div id="counterWall">
+    <div class="container-fluid">
+     <div class="row">
+       <!--sidebar-->
+       <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
+         <nav class="navbar navbar-expand-lg flex-lg-column">
+          <a class="navbar-brand" href="#">Menú</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav flex-lg-column navStyle">
+              <a class="nav-item nav-link  active" href="#"><i class="fas fa-home pr-3"></i>Home</a>
+              <a class="nav-item nav-link" href="#"><i class="fas fa-user pr-3"></i>Perfil</a>
+              <a class="nav-item nav-link" href="#"><i class="fas fa-pencil-alt pr-3"></i>Completar Perfil</a>
+              <a class="nav-item nav-link" href="#"><i class="fas fa-users pr-3"></i>Amigos</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!--muro-->
+      <div class="col-lg-9 containerWall">
+        <h1 class="titleWall text-center">Logremos el 7</h1>
+        <div class="row">
+         <div class="col-12">
+           <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingrese su comentario..."></textarea>
+          </div>
+          <button type="button" class="btn btn-primary float-right">Publicar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="float-left">
+            <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+          </div>
+          <div class="float-left ml-3">
+            <p class="nameUser">Juan Pérez Soto</p>
+            <p class="datePost">12 de julio 2018 13:45 hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="textPost">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero officia, nemo sequi minima nulla quasi soluta dolorum quibusdam praesentium temporibus vitae pariatur rerum deleniti, commodi saepe beatae hic necessitatibus repudiandae magni nisi corporis voluptas. Mollitia harum ab maxime blanditiis consequatur. Pariatur maxime, adipisci necessitatibus. Voluptatem voluptatibus modi eligendi odit tempore, nesciunt sunt quia quaerat quas odio enim nam repellendus consequuntur placeat explicabo impedit doloribus reprehenderit. Ex ullam labore deleniti, illum.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-3">
+          <button type="button" class="btn btn-primary float-right">Eliminar</button>
+          <button type="button" class="btn btn-primary float-right mr-3">Editar</button>
+        </div> 
+      </div>
+    </div>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
-  <!-- js -->
-  <script src="js/data.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/controller.js"></script>
+  </div>
+</div>
+</div>
+
+<!-- Imagen de loading -->
+<!-- <div class="text-center imgLoad"></div> -->
+</div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous"></script>
+<!-- js -->
+<script src="js/data.js"></script>
+<script src="js/view.js"></script>
+<script src="js/controller.js"></script>
 </body>
 
 </html>
