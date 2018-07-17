@@ -20,30 +20,6 @@ window.data.ingress = (connectMail, connectPassword) => {
 };
 
 
-// función para observar usuario y ver status
-window.data.activeUser = () => {
-  return firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      const userData = {
-        displayName: user.displayName,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        isAnonymous: user.isAnonymous,
-        uid: user.uid,
-        providerData: user.providerData
-      };
-      console.info('--->', userData);
-      window.view.wall(userData);
-      return user;
-    } else {
-      console.log('sin usuario activo');
-      window.view.ingress();
-    }
-  });
-};
-
-
 // función para conectar con facebook
 window.data.loginFace = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
@@ -68,4 +44,32 @@ window.data.logOut = () => {
     })
     .catch(() => {
     });
+};
+
+window.data.readWall = () => {
+
+  const firestore = firebase.firestore();
+  const settings = {/* your settings... */ timestampsInSnapshots: true };
+  firestore.settings(settings);
+  return firestore.collection('Wall').get().then((wallMessages) => {
+    return wallMessages;
+  });
+};
+
+
+window.data.writeWall = (dataWall) => {
+
+  const firestore = firebase.firestore();
+  return firestore.collection('Wall').doc().set({
+    date: dataWall.date,
+    email: dataWall.email,
+    message: dataWall.message,
+    name: dataWall.name,
+    photoURL: dataWall.photoURL,
+    uid: dataWall.uid
+  }).then(() => {
+    console.log('Document successfully written!');
+  }).catch((error) => {
+    console.error('Error writing document: ', error);
+  });
 };

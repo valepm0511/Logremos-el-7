@@ -1,10 +1,23 @@
 window.view = {};
 
-window.view.wall = (userData) => {
-  // window.controller.wall();
+window.view.wall = () => {
+  const wallMessage = window.controller.wall();
 
-  let divRegister = document.getElementById('counter');
-  divRegister.innerHTML = 'muro' + JSON.stringify(userData);
+  let htmlWall = `<p>${window.userData.displayName || window.userData.email}</p>
+  <textarea name="" id="textareaMessageWall" cols="50" rows="3"></textarea>
+  <button onclick="window.controller.publishMessage()">Publicar</button>`;
+
+  wallMessage.then(messages => {
+    messages.forEach(message => {
+      const men = message.data();
+      // console.info('id', message.id);
+      htmlWall += `<p>${men.name || men.email}</p>
+      <textarea name="" id="" cols="50" rows="3">${men.message}</textarea>`;
+    });
+
+    let divWall = document.getElementById('counter');
+    divWall.innerHTML = htmlWall;
+  });
 };
 
 // Escritura de html de crear cuenta

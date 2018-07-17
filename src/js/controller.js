@@ -49,6 +49,28 @@ window.controller.register = () => {
   }
 };
 
+// función para observar usuario y ver status
+window.controller.activeUser = () => {
+  return firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      window.userData = {
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        isAnonymous: user.isAnonymous,
+        uid: user.uid,
+        providerData: user.providerData
+      };
+      console.info('--->', window.userData);
+      window.view.wall();
+      return user;
+    } else {
+      console.log('sin usuario activo');
+      window.view.ingress();
+    }
+  });
+};
 
 // función para hacer login
 window.controller.ingress = () => {
@@ -62,6 +84,30 @@ window.controller.ingress = () => {
   // hacer un if con observador si es valido va a muro 
 };
 
+window.controller.wall = () => {
+  return window.data.readWall();
+};
+
 window.onload = () => {
-  window.data.activeUser();
+  window.controller.activeUser();
+};
+
+
+window.controller.publishMessage = () => {
+  const textareaMessageWall = document.getElementById('textareaMessageWall').value;
+  console.log('message', textareaMessageWall);
+  console.log('user', window.userData.email);
+
+  const dataWall = {
+    date: new Date(),
+    email: window.userData.email,
+    message: textareaMessageWall,
+    name: window.userData.displayName,
+    photoURL: window.userData.photoURL,
+    uid: window.userData.uid
+  };
+
+  window.data.writeWall(dataWall).then(() => {
+    window.view.wall();
+  });
 };
