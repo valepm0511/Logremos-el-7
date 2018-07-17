@@ -67,7 +67,7 @@ window.data.logOut = () => {
 };
 
 
-// función para obtener los documentos/mensajes desde firestore
+// función para guardar los documentos/mensajes desde firestore
 window.data.readWall = () => {
   const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true };

@@ -29,7 +29,7 @@ window.view.wall = () => {
       </div>
     </nav>
   </div>
-  <section>
+  <div>
     <h1 class="titleWall text-center">Logremos el 7</h1>
     <div class="row">
       <div class="col-12">
@@ -49,15 +49,29 @@ window.view.wall = () => {
         <button onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>
       </div>
     </div>
-  </section>`;
+  </div>`;
 
   wallMessage.then(messages => {
     messages.forEach(message => {
       const men = message.data();
+
+      // formato fecha
+      const options = {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      };
+      let dateFormat = men.date.toDate();
+      let date = dateFormat.toLocaleDateString('sp-GB', options);
+
+
       // console.info('id', message.id);
 
       htmlWall +=
-        `<section>
+      `<div>
         <div class="row">
           <div class="col-12">
             <div class="float-left">
@@ -65,7 +79,7 @@ window.view.wall = () => {
             </div>
             <div class="float-left ml-3">
               <p class="nameUser">${men.name || men.email}</p>
-              <p class="datePost">${men.date}</p>
+              <p class="datePost">${date} h</p>
             </div>
           </div>
         </div>
@@ -80,7 +94,7 @@ window.view.wall = () => {
             <button type="button" class="btn btn-primary float-right mr-3">Editar</button>
           </div>
         </div>
-      </section>`;
+      </div >`;
     });
 
     let divWall = document.getElementById('counter');
@@ -88,9 +102,9 @@ window.view.wall = () => {
   });
 };
 
+
 // Escritura de html de crear cuenta
 window.view.register = () => {
-  // document.getElementById('counter').className = 'containerLogin';
   let divRegister = document.getElementById('counter');
   divRegister.innerHTML =
     `<div class="container pt-5">
@@ -139,6 +153,8 @@ window.view.register = () => {
        </div>
      </div>`;
 };
+
+
 // Escritura de html de conectar
 window.view.ingress = () => {
   document.getElementById('counter').className = 'containerLogin';
