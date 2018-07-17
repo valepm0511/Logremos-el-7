@@ -101,6 +101,7 @@ window.controller.publishMessage = () => {
   const dataWall = {
     date: new Date(),
     email: window.userData.email,
+    like: 0,
     message: textareaMessageWall,
     name: window.userData.displayName,
     photoURL: window.userData.photoURL,

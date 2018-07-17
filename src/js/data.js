@@ -47,27 +47,18 @@ window.data.logOut = () => {
 };
 
 window.data.readWall = () => {
-
   const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true };
   firestore.settings(settings);
-  return firestore.collection('Wall').get().then((wallMessages) => {
+  return firestore.collection('wall').get().then((wallMessages) => {
     return wallMessages;
   });
 };
 
 
 window.data.writeWall = (dataWall) => {
-
   const firestore = firebase.firestore();
-  return firestore.collection('Wall').doc().set({
-    date: dataWall.date,
-    email: dataWall.email,
-    message: dataWall.message,
-    name: dataWall.name,
-    photoURL: dataWall.photoURL,
-    uid: dataWall.uid
-  }).then(() => {
+  return firestore.collection('wall').doc().set(dataWall).then(() => {
     console.log('Document successfully written!');
   }).catch((error) => {
     console.error('Error writing document: ', error);
