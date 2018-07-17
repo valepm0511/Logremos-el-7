@@ -58,6 +58,10 @@ window.controller.ingress = () => {
 
   // llama a ingress en firebase
   window.data.ingress(connectMail, connectPassword);
-  
+
   // hacer un if con observador si es valido va a muro 
+};
+
+window.onload = () => {
+  window.data.activeUser();
 };

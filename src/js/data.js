@@ -21,27 +21,27 @@ window.data.ingress = (connectMail, connectPassword) => {
 
 
 // función para observar usuario y ver status
-window.data.observer = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    console.log(user);
-    let status = '';
+window.data.activeUser = () => {
+  return firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      status = 'activo';
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
+      const userData = {
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        isAnonymous: user.isAnonymous,
+        uid: user.uid,
+        providerData: user.providerData
+      };
+      console.info('--->', userData);
+      window.view.wall(userData);
+      return user;
     } else {
-      status = 'no activo';
+      console.log('sin usuario activo');
+      window.view.ingress();
     }
-    console.log(status);
-    return status;
   });
 };
-window.data.observer();
 
 
 // función para conectar con facebook

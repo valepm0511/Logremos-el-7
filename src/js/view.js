@@ -1,5 +1,12 @@
 window.view = {};
 
+window.view.wall = (userData) => {
+  // window.controller.wall();
+
+  let divRegister = document.getElementById('counter');
+  divRegister.innerHTML = 'muro' + JSON.stringify(userData);
+};
+
 // Escritura de html de crear cuenta
 window.view.register = () => {
   // document.getElementById('counter').className = 'containerLogin';
@@ -120,5 +127,3 @@ window.view.ingress = () => {
       </div>
     </div>`;
 };
-// funciona cambio
-window.view.ingress();
