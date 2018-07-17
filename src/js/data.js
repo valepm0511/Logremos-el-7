@@ -54,9 +54,13 @@ window.data.loginGoogle = () => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
     });
+<<<<<<< HEAD
 };
 
 
+=======
+}
+>>>>>>> firebaseVale
 // función para cerrar sesión
 window.data.logOut = () => {
   firebase.auth().signOut()
