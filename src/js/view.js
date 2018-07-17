@@ -29,7 +29,7 @@ window.view.wall = () => {
       </div>
     </nav>
   </div>
-  <div>
+  <div class="col-lg-9">
     <h1 class="titleWall text-center">Logremos el 7</h1>
     <div class="row">
       <div class="col-12">
@@ -71,7 +71,7 @@ window.view.wall = () => {
       // console.info('id', message.id);
 
       htmlWall +=
-      `<div>
+      `<div class="col-lg-9">
         <div class="row">
           <div class="col-12">
             <div class="float-left">
