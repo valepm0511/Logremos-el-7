@@ -82,8 +82,18 @@ window.data.readWall = () => {
 window.data.writeWall = (dataWall) => {
   const firestore = firebase.firestore();
   return firestore.collection('wall').doc().set(dataWall).then(() => {
-    console.log('Document successfully written!');
   }).catch((error) => {
     console.error('Error writing document: ', error);
+  });
+};
+
+
+// borrar datos 
+window.data.deleteMessage = (id) => {
+  const firestore = firebase.firestore();
+  firestore.collection('wall').doc(id).delete().then(() => {
+    window.view.wall();
+  }).catch((error) => {
+    console.error('Error removing document: ', error);
   });
 };

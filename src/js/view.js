@@ -88,15 +88,15 @@ window.view.wall = () => {
         </div>
         <div class="row">
           <div class="col-12 mb-3">
-            <button type="button" class="btn btn-primary float-right">Eliminar</button>
+            <button type="button" class="btn btn-primary float-right" onclick="window.controller.deleteMessage('${message.id}')">Eliminar</button>
             <button type="button" class="btn btn-primary float-right mr-3">Editar</button>
           </div>
         </div>`;
     });
 
     let divWall = document.getElementById('counter');
-    divWall.innerHTML = htmlWall + 
-    `</div>
+    divWall.innerHTML = htmlWall +
+      `</div>
      </div>`;
   });
 };

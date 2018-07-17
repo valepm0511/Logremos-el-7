@@ -99,8 +99,6 @@ window.onload = () => {
 // función que lee mensaje de textarea y crea objeto de data 
 window.controller.publishMessage = () => {
   const textareaMessageWall = document.getElementById('textareaMessageWall').value;
-  console.log('message', textareaMessageWall);
-  console.log('user', window.userData.email);
 
   const dataWall = {
     date: new Date(),
@@ -117,4 +115,10 @@ window.controller.publishMessage = () => {
   window.data.writeWall(dataWall).then(() => {
     window.view.wall();
   });
+};
+
+
+//
+window.controller.deleteMessage = (id) => {
+  window.data.deleteMessage(id);
 };
