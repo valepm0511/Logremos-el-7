@@ -38,8 +38,8 @@ window.data.loginFace = () => {
     });
 };
 
-// funcion para conectar con google
 
+// funcion para conectar con google
 window.data.loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.setCustomParameters({
@@ -54,13 +54,9 @@ window.data.loginGoogle = () => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
     });
-<<<<<<< HEAD
 };
 
 
-=======
-}
->>>>>>> firebaseVale
 // función para cerrar sesión
 window.data.logOut = () => {
   firebase.auth().signOut()
@@ -70,6 +66,8 @@ window.data.logOut = () => {
     });
 };
 
+
+// función para obtener los documentos/mensajes desde firestore
 window.data.readWall = () => {
   const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true };
@@ -80,6 +78,7 @@ window.data.readWall = () => {
 };
 
 
+// función para escribir los mensajes desde firestore en el muro
 window.data.writeWall = (dataWall) => {
   const firestore = firebase.firestore();
   return firestore.collection('wall').doc().set(dataWall).then(() => {

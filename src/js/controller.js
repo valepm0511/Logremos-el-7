@@ -24,7 +24,6 @@ window.controller.validateLogin = (email, password) => {
       message: 'La contraseña debe contener minimo 6 caracteres'
     };
   };
-
   return {
     valid: true,
     message: ''
@@ -49,9 +48,10 @@ window.controller.register = () => {
   }
 };
 
-// función para observar usuario y ver status
+// función para ver actividad de usuario, capturar datos de usuario y enviar a muro o login
 window.controller.activeUser = () => {
   return firebase.auth().onAuthStateChanged((user) => {
+    // si hay usuario lee datos
     if (user) {
       window.userData = {
         displayName: user.displayName,
@@ -62,15 +62,16 @@ window.controller.activeUser = () => {
         uid: user.uid,
         providerData: user.providerData
       };
-      console.info('--->', window.userData);
+      // cuando hay usuario envia a muro
       window.view.wall();
       return user;
     } else {
-      console.log('sin usuario activo');
+      // no hay usuario y envia a login
       window.view.ingress();
     }
   });
 };
+
 
 // función para hacer login
 window.controller.ingress = () => {
@@ -80,19 +81,22 @@ window.controller.ingress = () => {
 
   // llama a ingress en firebase
   window.data.ingress(connectMail, connectPassword);
-
-  // hacer un if con observador si es valido va a muro 
 };
 
+
+// función que comunica escritura con data  
 window.controller.wall = () => {
   return window.data.readWall();
 };
 
+
+// función carga manada a analizar si usuario esta activo
 window.onload = () => {
   window.controller.activeUser();
 };
 
 
+// función que lee mensaje de textarea y crea objeto de data 
 window.controller.publishMessage = () => {
   const textareaMessageWall = document.getElementById('textareaMessageWall').value;
   console.log('message', textareaMessageWall);
@@ -108,6 +112,8 @@ window.controller.publishMessage = () => {
     uid: window.userData.uid
   };
 
+
+  // función que cuando obtenga respuesta de datos de muro vuelve a escribir el muro
   window.data.writeWall(dataWall).then(() => {
     window.view.wall();
   });
