@@ -77,20 +77,20 @@ window.view.wall = () => {
             </div>
             <div class="float-left ml-3">
               <p class="nameUser">${men.name || men.email}</p>
-              <p id="editDate" class="datePost">${date} h</p>
+              <p class="datePost">${date} h</p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <textarea class="form-control" id="editMessage" rows="3">${men.message}</textarea>
+            <textarea disabled class="form-control able" id="${message.id}" rows="3">${men.message}</textarea>
             </div>
         </div>
         <div class="row">
           <div class="col-12 mb-3">
             <button type="button" class="btn btn-primary float-right" onclick="window.controller.deleteMessage('${message.id}')">Eliminar</button>
             <div id="deleteBtnEdit">
-              <button id="editBtn" type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.editMessage('${message.id}')">Editar</button>
+              <button id="btn${message.id}" type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.editMessage('${message.id}')">Editar</button>
             </div>
           </div>
         </div>`;

@@ -186,3 +186,8 @@
 		overflow-y: auto;
 	}
 }
+
+
+textarea.able:disabled {
+	background: #e62626;
+}

@@ -102,34 +102,25 @@ window.data.deleteMessage = (id) => {
 
 // función para editar comentarios 
 window.data.editMessage = (id) => {
-  let originalMessage = document.getElementById('editMessage').value;
-  document.getElementById('textareaMessageWall').value = originalMessage;
-  const btnSaveEdit = document.getElementById('btnPublic');
+  document.getElementById(id).disabled = false;
+  const btnSaveEdit = document.getElementById('btn' + id);
   btnSaveEdit.innerHTML = 'Guardar';
-
-  let divDeleteBtnEdit = document.getElementById('deleteBtnEdit');
-  divDeleteBtnEdit.innerHTML = '';
 
   btnSaveEdit.onclick = () => {
     const firestore = firebase.firestore();
     const washingtonRef = firestore.collection('wall').doc(id);
-    const newMessage = document.getElementById('textareaMessageWall').value;
-    console.log(newMessage);
+
+    const newMessage = document.getElementById(id).value;
 
     return washingtonRef.update({
       message: newMessage,
       date: new Date()
     })
       .then(() => {
-        console.log('Document successfully updated!');
         window.view.wall();
       })
       .catch((error) => {
-        // The document probably doesn't exist.
         console.error('Error updating document: ', error);
       });
   };
-
-  // Set the "capital" field of the city 'DC'
-
 };
