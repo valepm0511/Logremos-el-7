@@ -57,7 +57,7 @@ window.data.logOut = () => {
     .then(() => {
     })
     .catch((error) => {
-      console.error('it was not possible to close session');
+      console.error('it was not possible to close session', error);
     });
 };
 

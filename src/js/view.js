@@ -3,6 +3,8 @@ window.view = {};
 
 // función de escritura del muro
 window.view.wall = () => {
+  var element = document.getElementById('counter');
+  element.classList.remove('containerLogin');
   const wallMessage = window.controller.wall();
 
   let htmlWall =
@@ -66,9 +68,9 @@ window.view.wall = () => {
       let date = dateFormat.toLocaleDateString('sp-GB', options);
 
 
-      // console.info('id', message.id);
-      htmlWall +=
-        `<div class="row">
+      if (window.userData.email === men.email) {
+        htmlWall +=
+          `<div class="row">
           <div class="col-12">
             <div class="float-left">
               <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
@@ -92,6 +94,25 @@ window.view.wall = () => {
             </div>
           </div>
         </div>`;
+      } else {
+        htmlWall +=
+          `<div class="row">
+          <div class="col-12">
+            <div class="float-left">
+              <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+            </div>
+            <div class="float-left ml-3">
+              <p class="nameUser">${men.name || men.email}</p>
+              <p class="datePost">${date} h</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea disabled class="form-control able" id="${message.id}" rows="3">${men.message}</textarea>
+            </div>
+        </div>`;
+      };
     });
 
     let divWall = document.getElementById('counter');
