@@ -20,14 +20,14 @@ window.view.wall = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <a class="nav-item nav-link  active" href="#">
-                <i class="fas fa-home pr-3"></i>Home</a>
-                <a class="nav-item nav-link" href="#">
-                <i class="fas fa-user pr-3"></i>Perfil</a>
-                <a class="nav-item nav-link" href="#">
-                <i class="fas fa-pencil-alt pr-3"></i>Completar Perfil</a>
-                <a class="nav-item nav-link" href="#">
-                <i class="fas fa-users pr-3"></i>Amigos</a>
+                <button type"button" class="">
+                <i class="fas fa-home pr-3"></i>Home</button>
+                <button type"button" class="">
+                <i class="fas fa-user pr-3"></i>Perfil</button>
+                <button type"button" class="">
+                <i class="fas fa-pencil-alt pr-3"></i>Completar Perfil</button>
+                <button type"button" class="" onclick="window.data.logOut()">
+                <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</button>
               </div>
             </div>
           </nav>
