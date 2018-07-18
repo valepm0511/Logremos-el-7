@@ -119,3 +119,50 @@ window.data.editMessage = (id) => {
       });
   };
 };
+
+
+// función para ingresar informacion de perfil de usuario
+window.data.infoEdit = () => {
+  const firestore = firebase.firestore();
+
+  let nameUserEdit = document.getElementById('nameUserEdit').value;
+  let emailUserEdit = document.getElementById('emailUserEdit').value;
+  let ageUserEdit = document.getElementById('ageUserEdit').value;
+  let biographyUserEdit = document.getElementById('biographyUserEdit').value;
+
+  firestore.collection('users').add({
+    name: nameUserEdit,
+    email: emailUserEdit,
+    age: ageUserEdit,
+    biography: biographyUserEdit
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+      window.idUsers = docRef.id;
+      console.log(window.idUsers);
+
+      document.getElementById('nameUserEdit').value = '';
+      document.getElementById('emailUserEdit').value = '';
+      document.getElementById('ageUserEdit').value = '';
+      document.getElementById('biographyUserEdit').value = '';
+      var docRef = firestore.collection('users').doc(docRef.id);
+
+      docRef.get().then((doc) => {
+        if (doc.exists) {
+          let infoEditUser = document.getElementById('infoEditUser');
+          infoEditUser.innerHTML = `
+        <p class="text-center infoPerfil mt-3">${doc.data().name}</p>
+        <p class="text-center infoPerfil">${doc.data().age}</p>
+        <p class="text-center infoPerfil">${doc.data().email}</p>
+        <p class="text-center text-white">${doc.data().biography}</p>`;
+        } else {
+          console.log('No such document!');
+        }
+      }).catch((error) => {
+        console.log('Error getting document:', error);
+      });
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
+};

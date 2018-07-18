@@ -24,7 +24,7 @@ window.view.wall = () => {
                 <i class="fas fa-home pr-3"></i>Home</button>
                 <button type"button" class="">
                 <i class="fas fa-user pr-3"></i>Perfil</button>
-                <button type"button" class="">
+                <button type"button" class="" onclick="window.view.infoEdit()">
                 <i class="fas fa-pencil-alt pr-3"></i>Completar Perfil</button>
                 <button type"button" class="" onclick="window.data.logOut()">
                 <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</button>
@@ -175,7 +175,7 @@ window.view.register = () => {
 };
 
 
-// Escritura de html de conectar
+// función escritura de html para agregar datos de perfil
 window.view.ingress = () => {
   document.getElementById('counter').className = 'containerLogin';
   let divIngress = document.getElementById('counter');
@@ -243,4 +243,136 @@ window.view.ingress = () => {
         </div>
                 </div>
               </div>`;
+};
+
+
+// función escritura de html para agregar datos de perfil
+window.view.infoEdit = () => {
+  let divPerfil = document.getElementById('counter');
+  divPerfil.innerHTML = `<div class="container-fluid">
+  <div class="row">
+    <!--sidebar-->
+    <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
+      <nav class="navbar navbar-expand-lg flex-lg-column">
+        <a class="navbar-brand" href="#">Menú</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav flex-lg-column navStyle">
+          <a class="nav-item nav-link" href="#">
+            <i class="fas fa-home pr-3"></i>Home</a>
+            <a class="nav-item nav-link" href="#">
+              <i class="fas fa-user pr-3"></i>Perfil</a>
+              <a class="nav-item nav-link active" href="#">
+                <i class="fas fa-pencil-alt pr-3"></i>Completar Perfil</a>
+                <a class="nav-item nav-link" href="#">
+                  <i class="fas fa-users pr-3"></i>Amigos</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!--container perfil-->
+          <div class="col-lg-9 containerWall">
+            <h1 class="titleWall text-center">Logremos el 7</h1>
+            <h1 class="display-4 text-center text-white titlePerfil">Información Personal</h1>
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-12">
+                <!--Informacion personal-->
+                <form>
+                  <div class="form-group">
+                    <label class="text-white">Nombre:</label>
+                    <input type="text" class="form-control" id="nameUserEdit" placeholder="Nombre...">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-white">Email:</label>
+                    <input type="email" class="form-control" id="emailUserEdit" placeholder="Email...">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-white">Edad:</label>
+                    <input type="number" class="form-control col-3 col-md-2" id="ageUserEdit" placeholder="Edad...">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-white">Foto:</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- textarea -->
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-12">
+                <form>
+                  <div class="form-group">
+                    <label class="text-white">Escribe un reseña</label>
+                    <textarea class="form-control" id="biographyUserEdit" rows="3"></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-12">
+                <label class="display-4 text-center text-white titlePerfil">Materias de Interes:</label>
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <form>
+                      <div class="form-group">
+                        <div class="checkbox">
+                          <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Matemáticas</span></label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Física</span></label>
+                        </div>
+                        <div class="checkbox disabled">
+                          <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Biología</span></label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-6 col-12">
+                   <form>
+                    <div class="form-group">
+                     <div class="checkbox">
+                      <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Lenguaje</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Química</span></label>
+                    </div>
+                    <div class="checkbox disabled">
+                      <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Ingles</span></label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-12">
+               <label class="display-4 text-center text-white titlePerfil">Nivel Educacional:</label>
+               <form>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Básica</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Medio</span></label>
+                  </div>
+                  <div class="checkbox disabled">
+                    <label><input type="checkbox" class="mr-2" value="" ><span class="text-white">Superior</span></label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-5">
+              <button type="button" class="btn btn-primary" onclick="window.data.infoEdit()">Guardar Información</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>`;
 };
