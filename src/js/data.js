@@ -26,11 +26,8 @@ window.data.loginFace = () => {
   provider.setCustomParameters({
     'display': 'popup'
   });
-  let status;
   firebase.auth().signInWithPopup(provider)
     .then(() => {
-      status = 'activado desdes facebook';
-      console.log(status);
     })
     .catch((error) => {
       console.log('error de firebase > ' + error.code);
@@ -45,25 +42,13 @@ window.data.loginGoogle = () => {
   provider.setCustomParameters({
     'login_hint': 'user@example.com'
   });
-  let status;
   firebase.auth().signInWithPopup(provider)
     .then(() => {
-      status = 'activado desde google';
-      console.log(status);
     }).catch(() => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
     });
 };
-
-// // google
-// function onSignIn(googleUser) {
-//   var profile = googleUser.getBasicProfile();
-//   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-//   console.log('Name: ' + profile.getName());
-//   console.log('Image URL: ' + profile.getImageUrl());
-//   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-// }
 
 
 // función para cerrar sesión
@@ -71,7 +56,8 @@ window.data.logOut = () => {
   firebase.auth().signOut()
     .then(() => {
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error('it was not possible to close session');
     });
 };
 
