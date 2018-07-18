@@ -49,20 +49,11 @@ window.view.wall = () => {
         <div class="form-group">
           <textarea class="form-control" id="textareaMessageWall" rows="3" placeholder="Ingrese su comentario..."></textarea>
         </div>
-<<<<<<< HEAD
         <button id="btnPublic" onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>`;
-=======
-        <button onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>
-      </div>
-    </div>
-  </section>
-  </div>`;
->>>>>>> firebaseVale
 
   wallMessage.then(messages => {
     messages.forEach(message => {
       const men = message.data();
-<<<<<<< HEAD
 
       // formato fecha
       const options = {
@@ -80,12 +71,6 @@ window.view.wall = () => {
       if (window.userData.email === men.email) {
         htmlWall +=
           `<div class="row">
-=======
-      // console.info('id', message.id);
-      htmlWall +=
-        `< section >
-          <div class="row">
->>>>>>> firebaseVale
             <div class="col-12">
               <div class="float-left">
                 <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
@@ -110,8 +95,8 @@ window.view.wall = () => {
               </div>
             </div>`;
       } else {
-              htmlWall +=
-              `<div class="row">
+        htmlWall +=
+          `<div class="row">
           <div class="col-12">
             <div class="float-left">
               <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
@@ -127,11 +112,11 @@ window.view.wall = () => {
             <textarea disabled class="form-control able" id="${message.id}" rows="3">${men.message}</textarea>
             </div>
         </div>`;
-            };
-          });
-      
-          let divWall = document.getElementById('counter');
-          divWall.innerHTML = htmlWall +
+      };
+    });
+
+    let divWall = document.getElementById('counter');
+    divWall.innerHTML = htmlWall +
       `</div>
      </div > `;
   });
@@ -187,14 +172,14 @@ window.view.register = () => {
          </div>
        </div>
             </div>`;
-       };
-       
-       
-       // Escritura de html de conectar
+};
+
+
+// Escritura de html de conectar
 window.view.ingress = () => {
-              document.getElementById('counter').className = 'containerLogin';
-            let divIngress = document.getElementById('counter');
-            divIngress.innerHTML =
+  document.getElementById('counter').className = 'containerLogin';
+  let divIngress = document.getElementById('counter');
+  divIngress.innerHTML =
     `<div class="container pt-5">
               <h1 class="titleSize text-center pt-sm-2 pt-lg-5">Logremos el 7</h1>
               <h2 class="text-center titleSizeCuenta">Iniciar Sesión</h2>
