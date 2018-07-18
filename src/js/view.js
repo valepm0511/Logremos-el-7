@@ -48,7 +48,7 @@ window.view.wall = () => {
         <div class="form-group">
           <textarea class="form-control" id="textareaMessageWall" rows="3" placeholder="Ingrese su comentario..."></textarea>
         </div>
-        <button onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>`;
+        <button id="btnPublic" onclick="window.controller.publishMessage()" type="button" class="btn btn-primary float-right">Publicar</button>`;
 
   wallMessage.then(messages => {
     messages.forEach(message => {
@@ -77,19 +77,21 @@ window.view.wall = () => {
             </div>
             <div class="float-left ml-3">
               <p class="nameUser">${men.name || men.email}</p>
-              <p class="datePost">${date} h</p>
+              <p id="editDate" class="datePost">${date} h</p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="textPost">${men.message}</p>
-          </div>
+            <textarea class="form-control" id="editMessage" rows="3">${men.message}</textarea>
+            </div>
         </div>
         <div class="row">
           <div class="col-12 mb-3">
             <button type="button" class="btn btn-primary float-right" onclick="window.controller.deleteMessage('${message.id}')">Eliminar</button>
-            <button type="button" class="btn btn-primary float-right mr-3">Editar</button>
+            <div id="deleteBtnEdit">
+              <button id="editBtn" type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.editMessage('${message.id}')">Editar</button>
+            </div>
           </div>
         </div>`;
     });

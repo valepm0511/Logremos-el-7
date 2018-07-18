@@ -110,7 +110,6 @@ window.controller.publishMessage = () => {
     uid: window.userData.uid
   };
 
-
   // función que cuando obtenga respuesta de datos de muro vuelve a escribir el muro
   window.data.writeWall(dataWall).then(() => {
     window.view.wall();
@@ -118,7 +117,13 @@ window.controller.publishMessage = () => {
 };
 
 
-//
+// función para eliminar mensajes y resfrescar muro 
 window.controller.deleteMessage = (id) => {
   window.data.deleteMessage(id);
+};
+
+
+// función para editar mensajes
+window.controller.editMessage = (id) => {
+  window.data.editMessage(id);
 };
