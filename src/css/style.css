@@ -18,7 +18,26 @@
 	width: 24px;
 	height: 24px;
 }
+.btnApple{
+	background: transparent;
+    border: none;
+    margin-top: 12px;
+}
+.btnApple:hover{
+	background: transparent;
+	border: none;
+	margin-top: 12px;
+}
 
+.appleLike{
+	float: right;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.appleLike:focus{
+    border: none;
+}
 /* .containerWall img {
 	width: 100vw;
 	height: 100vh;
@@ -40,7 +59,6 @@
 
 .titleSizeCuenta {
 	color: #B0C6B7;
-	text-shadow: 3px 4px 3px black;
 }
 
 .btn-style {
@@ -158,6 +176,20 @@
 	padding: 20px;
 	margin-top: 10px;
 	border-radius: 10px;
+}
+.titlePerfil{
+	font-size: 30px;
+}
+
+.imgPerfilEdit img{
+	border-radius: 100%;
+	width: 200px;
+}
+
+.infoPerfil{
+	font-size: 20px;
+	color: #ffffff;
+	margin-bottom: 2px;
 }
 
 @font-face {

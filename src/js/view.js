@@ -1,12 +1,9 @@
 window.view = {};
-
-
 // función de escritura del muro
 window.view.wall = () => {
   var element = document.getElementById('counter');
   element.classList.remove('containerLogin');
   const wallMessage = window.controller.wall();
-
   let htmlWall =
     `<div class="container-fluid">
       <div class="row">
@@ -93,10 +90,10 @@ window.view.wall = () => {
                   <button id="btn${message.id}" type="button" class="btn btn-primary float-right mr-3 mt-3 btnStyle" onclick="window.controller.editMessage('${message.id}')">Editar</button>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.counterLike('${message.id}','${men.like}')">
+                  <button type="button" class="btn btn-primary float-right mr-3 btnApple" onclick="window.controller.counterLike('${message.id}','${men.like}')">
                     <img src="img/manzana.png" class="imgApple" alt="apple">
                   </button>
-                  <p>(${men.like})</p>
+                  <p class="appleLike">(${men.like})</p>
                 </div>
               </div>
             </div>
@@ -123,10 +120,10 @@ window.view.wall = () => {
           <div class="row">
             <div class="col-12 mb-3">
               <div>
-                <button type="button" class="btn btn-primary float-right" onclick="window.controller.counterLike('${message.id}','${men.like}')">
+                <button type="button" class="btn btn-primary float-right btnApple" onclick="window.controller.counterLike('${message.id}','${men.like}')">
                   <img src="img/manzana.png" class="imgApple" alt="apple">
                 </button>
-                <p>(${men.like})</p>
+                <p class="appleLike">(${men.like})</p>
               </div>
             </div>
           </div>`;
@@ -179,10 +176,7 @@ window.view.register = () => {
                   <button class="btn btn-primary mb-2 col-12 btn-style" id="makeBtn" type="button" onclick="window.controller.register()">Crear Cuenta</button>
                 </div>
               </div>
-              <div class="col-10 col-sm-6 col-md-7 col-lg-7 m-auto">
-                <button type="button" class="btn btn-primary mb-2 col-12 btn-style_g"><i class="fab fa-google-plus-square"></i> Sesión con Google+</button>
-              </div>
-            </div>
+             </div>
           </form>
         </div>
       </div>
@@ -304,7 +298,7 @@ window.view.infoEdit = () => {
                 </div>
                 <div class="form-group">
                   <label class="text-white">Edad:</label>
-                  <input type="number" class="form-control col-3 col-md-2" id="ageUserEdit" placeholder="Edad...">
+                  <input type="number" class="form-control col-3 col-md-2" id="ageUserEdit" placeholder="Edad">
                 </div>
                 <div class="form-group">
                   <label class="text-white">Foto:</label>
@@ -378,7 +372,7 @@ window.view.infoEdit = () => {
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-12">
+                <div class="col-md-8 col-12">
                   <label class="display-4 text-center text-white titlePerfil">Nivel Educacional:</label>
                   <form>
                     <div class="form-group">
