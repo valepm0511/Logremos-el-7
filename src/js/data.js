@@ -124,9 +124,12 @@ window.data.editMessage = (id) => {
 // función para ingresar informacion de perfil de usuario
 window.data.infoEdit = () => {
   const firestore = firebase.firestore();
+  // const uid = window.userData.uid;
+  // console.log(uid);
 
-  // let nameUserEdit = document.getElementById('nameUserEdit').value;
-  // let emailUserEdit = document.getElementById('emailUserEdit').value;
+
+  let nameUserEdit = document.getElementById('nameUserEdit').value;
+  let emailUserEdit = document.getElementById('emailUserEdit').value;
   let ageUserEdit = document.getElementById('ageUserEdit').value;
   let biographyUserEdit = document.getElementById('biographyUserEdit').value;
 
@@ -134,7 +137,8 @@ window.data.infoEdit = () => {
     name: nameUserEdit,
     email: emailUserEdit,
     age: ageUserEdit,
-    biography: biographyUserEdit
+    biography: biographyUserEdit,
+    uid: window.userData.uid
   })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);

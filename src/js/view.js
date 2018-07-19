@@ -20,8 +20,8 @@ window.view.wall = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <button type"button" class="">
-                <i class="fas fa-home pr-3" onclick="window.view.wall()"></i>Home</button>
+                <button type"button" class="" onclick="window.view.wall()">
+                <i class="fas fa-home pr-3"></i>Home</button>
                 <button type"button" class="">
                 <i class="fas fa-user pr-3"></i>Perfil</button>
                 <button type"button" class="" onclick="window.view.infoEdit()">
@@ -272,8 +272,8 @@ window.view.infoEdit = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <button type"button" class="">
-                <i class="fas fa-home pr-3" onclick="window.view.wall()"></i>Home</button>
+                <button type"button" class="" onclick="window.view.wall()">
+                <i class="fas fa-home pr-3"></i>Home</button>
                 <button type"button" class="">
                 <i class="fas fa-user pr-3"></i>Perfil</button>
                 <button type"button" class="" onclick="window.view.infoEdit()">
