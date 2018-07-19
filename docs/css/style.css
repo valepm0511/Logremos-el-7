@@ -14,34 +14,10 @@
 	border: 20px groove #9C644B;
 }
 
-.imgApple {
-	width: 24px;
-	height: 24px;
-}
-.btnApple{
-	background: transparent;
-    border: none;
-    margin-top: 12px;
-}
-.btnApple:hover{
-	background: transparent;
-	border: none;
-	margin-top: 12px;
-}
-
-.appleLike{
-	float: right;
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-.appleLike:focus{
-    border: none;
-}
-/* .containerWall img {
+.containerWall img {
 	width: 100vw;
-	height: 100vh;
-}*/
+	/*height: 100vh;*/
+}
 
 .containerLogin img {
 	width: 100vw;
@@ -59,6 +35,7 @@
 
 .titleSizeCuenta {
 	color: #B0C6B7;
+	text-shadow: 3px 4px 3px black;
 }
 
 .btn-style {
@@ -154,7 +131,6 @@
 	border-radius: 100px;
 	width: 90px !important;
 	margin-top: 35px;
-	margin-bottom: 10px;
 }
 
 .nameUser {
@@ -177,20 +153,6 @@
 	margin-top: 10px;
 	border-radius: 10px;
 }
-.titlePerfil{
-	font-size: 30px;
-}
-
-.imgPerfilEdit img{
-	border-radius: 100%;
-	width: 200px;
-}
-
-.infoPerfil{
-	font-size: 20px;
-	color: #ffffff;
-	margin-bottom: 2px;
-}
 
 @font-face {
 	font-family: "CoalhandLukeTRIAL";
@@ -202,29 +164,6 @@
 	background-position: center;
 	width: 100vw;
 	height: 100vh;
-}
-
-.btnNav{
-	background: transparent;
-    border: none;
-	color: #ffffff;
-	font-size: 18px;
-	cursor: pointer;
-	outline:none;
-}
-
-.btnStyle{
-	background-color: #C96662;
-	border: #C96662;
-}
-
-.btnStyle:hover{
-	background-color: #899764;
-	border: #899764;
-}
-
-.imgFondo{
-	background-image: url('../img/imgFondo.jpg')
 }
 
 @media (min-width: 992px) {
@@ -249,7 +188,7 @@
 }
 
 textarea.able:disabled {
-	background: #f3f3f3;
+	background: #e62626;
 }
 
 .counterLoad {

@@ -26,8 +26,11 @@ window.data.loginFace = () => {
   provider.setCustomParameters({
     'display': 'popup'
   });
+  let status;
   firebase.auth().signInWithPopup(provider)
     .then(() => {
+      status = 'activado desdes facebook';
+      console.log(status);
     })
     .catch((error) => {
       console.log('error de firebase > ' + error.code);
@@ -42,13 +45,25 @@ window.data.loginGoogle = () => {
   provider.setCustomParameters({
     'login_hint': 'user@example.com'
   });
+  let status;
   firebase.auth().signInWithPopup(provider)
     .then(() => {
+      status = 'activado desde google';
+      console.log(status);
     }).catch(() => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
     });
 };
+
+// // google
+// function onSignIn(googleUser) {
+//   var profile = googleUser.getBasicProfile();
+//   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+//   console.log('Name: ' + profile.getName());
+//   console.log('Image URL: ' + profile.getImageUrl());
+//   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+// }
 
 
 // función para cerrar sesión
@@ -56,8 +71,7 @@ window.data.logOut = () => {
   firebase.auth().signOut()
     .then(() => {
     })
-    .catch((error) => {
-      console.error('it was not possible to close session', error);
+    .catch(() => {
     });
 };
 
@@ -65,11 +79,9 @@ window.data.logOut = () => {
 // función para guardar los documentos/mensajes desde firestore
 window.data.readWall = () => {
   const firestore = firebase.firestore();
-  const settings = { /* your settings... */
-    timestampsInSnapshots: true
-  };
+  const settings = {/* your settings... */ timestampsInSnapshots: true };
   firestore.settings(settings);
-  return firestore.collection('wall').orderBy('date', 'desc').limit(20).get().then((wallMessages) => {
+  return firestore.collection('wall').get().then((wallMessages) => {
     return wallMessages;
   });
 };
@@ -120,73 +132,4 @@ window.data.editMessage = (id) => {
         console.error('Error updating document: ', error);
       });
   };
-};
-
-
-// función para ingresar informacion de perfil de usuario
-window.data.infoEdit = () => {
-  const firestore = firebase.firestore();
-  // const uid = window.userData.uid;
-  // console.log(uid);
-
-
-  let nameUserEdit = document.getElementById('nameUserEdit').value;
-  let emailUserEdit = document.getElementById('emailUserEdit').value;
-  let ageUserEdit = document.getElementById('ageUserEdit').value;
-  let biographyUserEdit = document.getElementById('biographyUserEdit').value;
-
-  firestore.collection('users').add({
-    name: nameUserEdit,
-    email: emailUserEdit,
-    age: ageUserEdit,
-    biography: biographyUserEdit,
-    uid: window.userData.uid
-  })
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-      window.idUsers = docRef.id;
-      console.log(window.idUsers);
-
-      // document.getElementById('nameUserEdit').value = '';
-      // document.getElementById('emailUserEdit').value = '';
-      document.getElementById('ageUserEdit').value = '';
-      document.getElementById('biographyUserEdit').value = '';
-      var docRef = firestore.collection('users').doc(docRef.id);
-
-      docRef.get().then((doc) => {
-        if (doc.exists) {
-          let infoEditUser = document.getElementById('infoEditUser');
-          infoEditUser.innerHTML = `
-        <p class="text-center infoPerfil mt-3">${doc.data().name}</p>
-        <p class="text-center infoPerfil">${doc.data().age}</p>
-        <p class="text-center infoPerfil">${doc.data().email}</p>
-        <p class="text-center text-white">${doc.data().biography}</p>`;
-        } else {
-          console.log('No such document!');
-        }
-      }).catch((error) => {
-        console.log('Error getting document:', error);
-      });
-    })
-    .catch((error) => {
-      console.error('Error adding document: ', error);
-    });
-};
-
-
-// función que agrega likes
-window.data.counterLike = (id, oldLike) => {
-  const firestore = firebase.firestore();
-  const likeRef = firestore.collection('wall').doc(id);
-
-  return likeRef.update({
-    like: parseInt(oldLike) + 1
-  })
-    .then(() => {
-      window.view.wall();
-    })
-    .catch((error) => {
-      // The document probably doesn't exist.
-      console.error('Error updating document: ', error);
-    });
 };

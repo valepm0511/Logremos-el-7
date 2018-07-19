@@ -117,13 +117,14 @@ window.controller.publishMessage = () => {
   });
 };
 
-// función para editar mensajes
-window.controller.editMessage = (id) => {
-  window.data.editMessage(id);
+
+// función para eliminar mensajes y resfrescar muro 
+window.controller.deleteMessage = (id) => {
+  window.data.deleteMessage(id);
 };
 
 
-// función para agregar like
-window.controller.counterLike = (id, oldLike) => {
-  window.data.counterLike(id, oldLike);
+// función para editar mensajes
+window.controller.editMessage = (id) => {
+  window.data.editMessage(id);
 };
