@@ -261,55 +261,27 @@ window.view.ingress = () => {
 // función escritura de html para agregar datos de perfil
 window.view.infoEdit = () => {
   let divPerfil = document.getElementById('counter');
-  divPerfil.innerHTML = `<div class="container-fluid">
-  <div class="row">
-    <!--sidebar-->
-    <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky imgFondo">
-      <nav class="navbar navbar-expand-lg flex-lg-column">
-        <a class="navbar-brand" href="#">Menú</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  divPerfil.innerHTML =
+    `<div class="container-fluid">
+      <div class="row">
+        <!--sidebar-->
+        <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky imgFondo">
+          <nav class="navbar navbar-expand-lg flex-lg-column">
+            <a class="navbar-brand" href="#">Menú</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
-                <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type"button" class="btnNav text-left col-12">
-                <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
-                <i class="fas fa-pencil-alt pr-3 py-3"></i>Completar Perfil</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.data.logOut()">
-                <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
-              </div>
-            </div>
-            </nav>
-          </div>
-          <!--container perfil-->
-          <div class="col-lg-9 containerWall">
-            <h1 class="titleWall text-center">Logremos el 7</h1>
-            <h1 class="display-4 text-center text-white titlePerfil">Información Personal</h1>
-            <div class="row justify-content-center">
-              <div class="col-md-8 col-12">
-                <!--Informacion personal-->
-                <form>
-                  <div class="form-group">
-                    <label class="text-white">Nombre:</label>
-                    <input type="text" class="form-control" id="nameUserEdit" placeholder="Nombre...">
-                  </div>
-                  <div class="form-group">
-                    <label class="text-white">Email:</label>
-                    <input type="email" class="form-control" id="emailUserEdit" placeholder="Email...">
-                  </div>
-                  <div class="form-group">
-                    <label class="text-white">Edad:</label>
-                    <input type="number" class="form-control col-3 col-md-2" id="ageUserEdit" placeholder="Edad...">
-                  </div>
-                  <div class="form-group">
-                    <label class="text-white">Foto:</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div>
-                </form>
+                <button type "button" class="btnNav text-left col-12" onclick="window.view.wall()">
+                  <i class="fas fa-home pr-3 py-3"></i>Home</button>
+                <button type "button" class="btnNav text-left col-12">
+                  <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
+                  <i class="fas fa-pencil-alt pr-3 py-3"></i>Completar Perfil</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.data.logOut()">
+                  <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
               </div>
             </div>
           </nav>
@@ -435,59 +407,65 @@ window.view.infoEdit = () => {
             </div>
             <div class="row">
               <div class="col-md-8 col-12">
-               <label class="display-4 text-white ">Nivel Educacional:</label>
-               <form>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Básica</span></label>
+                <label class="display-4 text-white ">Nivel Educacional:</label>
+                <form>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" class="mr-2" value="">
+                        <span class="text-white">Básica</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" class="mr-2" value="">
+                        <span class="text-white">Medio</span>
+                      </label>
+                    </div>
+                    <div class="checkbox disabled">
+                      <label>
+                        <input type="checkbox" class="mr-2" value="">
+                        <span class="text-white">Superior</span>
+                      </label>
+                    </div>
+                    <div class="row mb-5">
+                      <div class="col-5">
+                        <button type="button" class="btn btn-primary" onclick="window.data.infoEdit()">Guardar Información</button>
+                      </div>
+                    </div>
                   </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" class="mr-2" value=""><span class="text-white">Medio</span></label>
-                  </div>
-                  <div class="checkbox disabled">
-                    <label><input type="checkbox" class="mr-2" value="" ><span class="text-white">Superior</span></label>
-                  </div>
-              <div class="row mb-5">
-                <div class="col-5">
-                  <button type="button" class="btn btn-primary" onclick="window.data.infoEdit()">Guardar Información</button>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>`;
+    </div>`;
 };
 
 
-// función para eliminar mensajes y resfrescar muro 
+// función para mostrar alerta d confirmacion de eliminar mensaje
 window.view.deleteMessage = (id) => {
   let divDelete = document.getElementById(`alert${id}`);
-  divDelete.innerHTML = `
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-         <h5 class="text-center" id="exampleModalLabel">Alerta</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  divDelete.innerHTML =
+    `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="text-center" id="exampleModalLabel">Alerta</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            ¿Quiere eliminar este mensaje?
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-primary" onclick="window.data.deleteMessage('${id}')" data-dismiss="modal">Si</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          </div>
+        </div>
       </div>
-      <div class="modal-body text-center">
-        ¿Quiere eliminar este mensaje?
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-primary" onclick="window.data.deleteMessage('${id}')" data-dismiss="modal">Si</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-      </div>
-    </div>
-  </div>
-</div>`;
-
-  window.view.writeDataProfile();
+    </div>`;
 };
 
 
@@ -496,6 +474,5 @@ window.view.writeDataProfile = () => {
   console.log(window.userData);
 
   document.getElementById('nameUserEdit').value = window.userData.displayName;
-
   document.getElementById('emailUserEdit').value = window.userData.email;
 };
