@@ -131,6 +131,7 @@
 	border-radius: 100px;
 	width: 90px !important;
 	margin-top: 35px;
+	margin-bottom: 10px;
 }
 
 .nameUser {
@@ -166,6 +167,29 @@
 	height: 100vh;
 }
 
+.btnNav{
+	background: transparent;
+    border: none;
+	color: #ffffff;
+	font-size: 18px;
+	cursor: pointer;
+	outline:none;
+}
+
+.btnStyle{
+	background-color: #C96662;
+	border: #C96662;
+}
+
+.btnStyle:hover{
+	background-color: #899764;
+	border: #899764;
+}
+
+.imgFondo{
+	background-image: url('../img/imgFondo.jpg')
+}
+
 @media (min-width: 992px) {
 	.sidebar {
 		position: fixed;
@@ -188,7 +212,7 @@
 }
 
 textarea.able:disabled {
-	background: #e62626;
+	background: #f3f3f3;
 }
 
 .counterLoad {

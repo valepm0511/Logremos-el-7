@@ -117,19 +117,6 @@ window.controller.publishMessage = () => {
   });
 };
 
-
-// función para eliminar mensajes y resfrescar muro 
-window.controller.deleteMessage = (id) => {
-  let divDelete = document.getElementById('counter');
-  divDelete.innerHTML = `<div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Alerta!</h4> 
-  Seguro quieres eliminar el mensaje!
-  <button type="button" onclick="window.data.deleteMessage('${id}')">Si</button>
-  <button type="button" onclick="window.view.wall()">No</button>
-</div>`;
-};
-
-
 // función para editar mensajes
 window.controller.editMessage = (id) => {
   window.data.editMessage(id);
