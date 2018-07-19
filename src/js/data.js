@@ -67,7 +67,7 @@ window.data.readWall = () => {
   const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true };
   firestore.settings(settings);
-  return firestore.collection('wall').get().then((wallMessages) => {
+  return firestore.collection('wall').orderBy('date', 'desc').limit(20).get().then((wallMessages) => {
     return wallMessages;
   });
 };
@@ -123,7 +123,6 @@ window.data.editMessage = (id) => {
 
 // función para ingresar informacion de perfil de usuario
 window.data.infoEdit = () => {
-
   const firestore = firebase.firestore();
 
   // let nameUserEdit = document.getElementById('nameUserEdit').value;
