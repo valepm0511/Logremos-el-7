@@ -197,6 +197,7 @@ window.data.dataCollection = () => {
       console.log('Document data:', doc.data());
       window.view.showProfile(doc.data());
     } else {
+      window.view.infoEdit();
       console.log('No such document!');
     }
   }).catch((error) => {
