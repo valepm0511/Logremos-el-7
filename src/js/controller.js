@@ -99,8 +99,8 @@ window.onload = () => {
 
 // función que lee mensaje de textarea y crea objeto de data 
 window.controller.publishMessage = () => {
-  const textareaMessageWall = document.getElementById('textareaMessageWall').value;
-
+  const textMessageWall = document.getElementById('textareaMessageWall').value;
+  const textareaMessageWall = textMessageWall.trim();
   const dataWall = {
     date: new Date(),
     email: window.userData.email,
@@ -110,11 +110,14 @@ window.controller.publishMessage = () => {
     photoURL: window.userData.photoURL,
     uid: window.userData.uid
   };
-
   // función que cuando obtenga respuesta de datos de muro vuelve a escribir el muro
-  window.data.writeWall(dataWall).then(() => {
-    window.view.wall();
-  });
+  if (textareaMessageWall.length > 0) {
+    window.data.writeWall(dataWall).then(() => {
+      window.view.wall();
+    });
+  } else {
+    alert('Debe ingresar texto');
+  }
 };
 
 // función para editar mensajes

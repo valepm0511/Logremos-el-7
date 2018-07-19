@@ -27,8 +27,7 @@ window.data.loginFace = () => {
     'display': 'popup'
   });
   firebase.auth().signInWithPopup(provider)
-    .then(() => {
-    })
+    .then(() => {})
     .catch((error) => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
@@ -43,8 +42,7 @@ window.data.loginGoogle = () => {
     'login_hint': 'user@example.com'
   });
   firebase.auth().signInWithPopup(provider)
-    .then(() => {
-    }).catch(() => {
+    .then(() => {}).catch(() => {
       console.log('error de firebase > ' + error.code);
       console.log('error de firebase, mensaje > ' + error.message);
     });
@@ -54,8 +52,7 @@ window.data.loginGoogle = () => {
 // función para cerrar sesión
 window.data.logOut = () => {
   firebase.auth().signOut()
-    .then(() => {
-    })
+    .then(() => {})
     .catch((error) => {
       console.error('it was not possible to close session', error);
     });
@@ -106,9 +103,7 @@ window.data.editMessage = (id) => {
   btnSaveEdit.onclick = () => {
     const firestore = firebase.firestore();
     const washingtonRef = firestore.collection('wall').doc(id);
-
     const newMessage = document.getElementById(id).value;
-
     return washingtonRef.update({
       message: newMessage,
       date: new Date()
