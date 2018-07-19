@@ -25,7 +25,7 @@ window.view.wall = () => {
                 <button type"button" class="btnNav text-left col-12">
                 <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
-                <i class="fas fa-pencil-alt pr-3 py-3"></i>Completar Perfil</button>
+                <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
                 <button type"button" class="btnNav text-left col-12" onclick="window.data.logOut()">
                 <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
               </div>
@@ -145,7 +145,7 @@ window.view.wall = () => {
 window.view.register = () => {
   let divRegister = document.getElementById('counter');
   divRegister.innerHTML =
-    `< div class="container pt-5" >
+    `<div class="container pt-5">
       <h1 class="titleSize text-center pt-sm-2 pt-lg-5">Logremos el 7</h1>
       <h2 class="display-4 text-center text-white titleSizeCuenta">Crear Cuenta</h2>
       <div class="row justify-content-center pt-3 p-0">
@@ -279,7 +279,7 @@ window.view.infoEdit = () => {
                 <button type "button" class="btnNav text-left col-12">
                   <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
                 <button type "button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
-                  <i class="fas fa-pencil-alt pr-3 py-3"></i>Completar Perfil</button>
+                  <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
                 <button type "button" class="btnNav text-left col-12" onclick="window.data.logOut()">
                   <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
               </div>
@@ -440,6 +440,7 @@ window.view.infoEdit = () => {
         </div>
       </div>
     </div>`;
+  window.view.writeDataProfile();
 };
 
 
