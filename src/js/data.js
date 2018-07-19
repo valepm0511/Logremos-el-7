@@ -103,11 +103,11 @@ window.data.editMessage = (id) => {
 
   btnSaveEdit.onclick = () => {
     const firestore = firebase.firestore();
-    const washingtonRef = firestore.collection('wall').doc(id);
+    const editRef = firestore.collection('wall').doc(id);
 
     const newMessage = document.getElementById(id).value;
 
-    return washingtonRef.update({
+    return editRef.update({
       message: newMessage,
       date: new Date()
     })
@@ -121,56 +121,86 @@ window.data.editMessage = (id) => {
 };
 
 
+// funcion para volver a leer datos y sobreescribirlos en identificador 
+window.data.refreshData = () => {
+  return firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      window.userData = {
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        isAnonymous: user.isAnonymous,
+        uid: user.uid,
+        providerData: user.providerData
+      };
+      return user;
+    }
+  });
+};
+
+
 // función para ingresar informacion de perfil de usuario
 window.data.infoEdit = () => {
-  const firestore = firebase.firestore();
-  // const uid = window.userData.uid;
-  // console.log(uid);
+  // para agregar nombre a Authentication
+  let nameUserEdit = document.getElementById('nameUserEdit').value;
+  var user = firebase.auth().currentUser;
+  user.updateProfile({
+    displayName: nameUserEdit,
+  }).then(() => {
+    window.data.refreshData();
+  }).catch((error) => {
+  });
+
+  // para agregar email a Authentication
+  let emailUserEdit = document.getElementById('emailUserEdit').value;
+  var user = firebase.auth().currentUser;
+  user.updateEmail(emailUserEdit).then(() => {
+    window.data.refreshData();
+  }).catch((error) => {
+  });
+};
 
 
+// función para guardar datos de user en collección
+window.data.addUser = () => {
   let nameUserEdit = document.getElementById('nameUserEdit').value;
   let emailUserEdit = document.getElementById('emailUserEdit').value;
   let ageUserEdit = document.getElementById('ageUserEdit').value;
   let biographyUserEdit = document.getElementById('biographyUserEdit').value;
 
-  firestore.collection('users').add({
+  let dataUserProfile = {
     name: nameUserEdit,
     email: emailUserEdit,
     age: ageUserEdit,
     biography: biographyUserEdit,
+    photoURL: window.userData.photoURL,
     uid: window.userData.uid
-  })
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-      window.idUsers = docRef.id;
-      console.log(window.idUsers);
+  };
 
-      // document.getElementById('nameUserEdit').value = '';
-      // document.getElementById('emailUserEdit').value = '';
-      document.getElementById('ageUserEdit').value = '';
-      document.getElementById('biographyUserEdit').value = '';
-      var docRef = firestore.collection('users').doc(docRef.id);
-
-      docRef.get().then((doc) => {
-        if (doc.exists) {
-          let infoEditUser = document.getElementById('infoEditUser');
-          infoEditUser.innerHTML = `
-        <p class="text-center infoPerfil mt-3">${doc.data().name}</p>
-        <p class="text-center infoPerfil">${doc.data().age}</p>
-        <p class="text-center infoPerfil">${doc.data().email}</p>
-        <p class="text-center text-white">${doc.data().biography}</p>`;
-        } else {
-          console.log('No such document!');
-        }
-      }).catch((error) => {
-        console.log('Error getting document:', error);
-      });
-    })
-    .catch((error) => {
-      console.error('Error adding document: ', error);
-    });
+  const firestore = firebase.firestore();
+  firestore.collection('profile').doc(emailUserEdit).set(dataUserProfile);
+  window.view.showProfile(dataUserProfile);
 };
 
+
+// función para obtener datos de colección user
+window.data.dataCollection = () => {
+  const firestore = firebase.firestore();
+
+  var docRef = firestore.collection('profile').doc(window.userData.email);
+
+  docRef.get().then((doc) => {
+    if (doc.exists) {
+      console.log('Document data:', doc.data());
+      window.view.showProfile(doc.data());
+    } else {
+      console.log('No such document!');
+    }
+  }).catch((error) => {
+    console.log('Error getting document:', error);
+  });
+};
 
 // función que agrega likes
 window.data.counterLike = (id, oldLike) => {

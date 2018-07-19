@@ -22,7 +22,7 @@ window.view.wall = () => {
               <div class="navbar-nav flex-lg-column navStyle">
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
                 <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type"button" class="btnNav text-left col-12">
+                <button type"button" class="btnNav text-left col-12" onclick="window.controller.spellProfile()">
                 <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
                 <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
@@ -190,7 +190,7 @@ window.view.register = () => {
 };
 
 
-// función escritura de html para agregar datos de perfil
+// función escritura de html para login
 window.view.ingress = () => {
   document.getElementById('counter').className = 'containerLogin';
   let divIngress = document.getElementById('counter');
@@ -260,8 +260,8 @@ window.view.ingress = () => {
 
 // función escritura de html para agregar datos de perfil
 window.view.infoEdit = () => {
-  let divPerfil = document.getElementById('counter');
-  divPerfil.innerHTML =
+  let divEditProfile = document.getElementById('counter');
+  divEditProfile.innerHTML =
     `<div class="container-fluid">
       <div class="row">
         <!--sidebar-->
@@ -274,14 +274,14 @@ window.view.infoEdit = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <button type "button" class="btnNav text-left col-12" onclick="window.view.wall()">
-                  <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type "button" class="btnNav text-left col-12">
-                  <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
-                <button type "button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
-                  <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
-                <button type "button" class="btnNav text-left col-12" onclick="window.data.logOut()">
-                  <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
+                <i class="fas fa-home pr-3 py-3"></i>Home</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.showProfile()">
+                <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
+                <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.data.logOut()">
+                <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
               </div>
             </div>
           </nav>
@@ -430,7 +430,7 @@ window.view.infoEdit = () => {
                     </div>
                     <div class="row mb-5">
                       <div class="col-5">
-                        <button type="button" class="btn btn-primary" onclick="window.data.infoEdit()">Guardar Información</button>
+                        <button type="button" class="btn btn-primary" onclick="window.controller.editProfile()">Guardar Información</button>
                       </div>
                     </div>
                   </div>
@@ -472,8 +472,63 @@ window.view.deleteMessage = (id) => {
 
 // función para escribir datos existentes en perfil
 window.view.writeDataProfile = () => {
-  console.log(window.userData);
+  // console.log(window.userData);
 
   document.getElementById('nameUserEdit').value = window.userData.displayName;
   document.getElementById('emailUserEdit').value = window.userData.email;
+};
+
+
+window.view.showProfile = (dataUserProfile) => {
+  let divProfile = document.getElementById('counter');
+  divProfile.innerHTML =
+    `<div class="container-fluid">
+      <div class="row">
+        <!--sidebar-->
+        <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
+          <nav class="navbar navbar-expand-lg flex-lg-column">
+            <a class="navbar-brand" href="#">Menú</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav flex-lg-column navStyle">
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
+                <i class="fas fa-home pr-3 py-3"></i>Home</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.showProfile()">
+                <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
+                <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
+                <button type"button" class="btnNav text-left col-12" onclick="window.data.logOut()">
+                <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!--container perfil-->
+        <div class="col-lg-9 containerWall">
+          <h1 class="titleWall text-center">Logremos el 7</h1>
+          <h1 class="display-4 text-center text-white titlePerfil">Información Personal</h1>
+          <div class="row justify-content-center">
+            <div class="mt-3 imgPerfilEdit">
+              <img src="img/Avatar-facebook.png" class="img-fluid">
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12" id="infoEditUser">
+              <p class="text-center infoPerfil mt-3">${dataUserProfile.name}</p>
+              <p class="text-center infoPerfil">${dataUserProfile.email}</p>
+              <p class="text-center infoPerfil">${dataUserProfile.age}</p>
+              <p class="text-center text-white">${dataUserProfile.biography}</p>;
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-12">
+            </div>
+          </div>
+          <!-- textarea -->
+        </div>
+      </div>
+    </div>`;
 };

@@ -127,3 +127,23 @@ window.controller.editMessage = (id) => {
 window.controller.counterLike = (id, oldLike) => {
   window.data.counterLike(id, oldLike);
 };
+
+
+// función para editar perfil
+window.controller.editProfile = () => {
+  let emailUserEdit = document.getElementById('emailUserEdit').value;
+
+  if (emailUserEdit === '') {
+    alert('No debe dejar el email vació');
+  } else {
+    window.data.infoEdit();
+    window.data.addUser();
+  };
+};
+
+
+// función para escribir perfil
+window.controller.spellProfile = () => {
+  window.data.dataCollection();
+  window.view.showProfile(profileCollection);
+};
