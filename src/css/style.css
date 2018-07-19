@@ -14,10 +14,15 @@
 	border: 20px groove #9C644B;
 }
 
-.containerWall img {
-	width: 100vw;
-	/*height: 100vh;*/
+.imgApple {
+	width: 24px;
+	height: 24px;
 }
+
+/* .containerWall img {
+	width: 100vw;
+	height: 100vh;
+}*/
 
 .containerLogin img {
 	width: 100vw;

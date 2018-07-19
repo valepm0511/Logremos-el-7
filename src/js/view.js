@@ -92,26 +92,42 @@ window.view.wall = () => {
                 <div id="deleteBtnEdit">
                   <button id="btn${message.id}" type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.editMessage('${message.id}')">Editar</button>
                 </div>
+                <div>
+                  <button type="button" class="btn btn-primary float-right mr-3" onclick="window.controller.counterLike('${message.id}','${men.like}')">
+                    <img src="img/manzana.png" class="imgApple" alt="apple">
+                  </button>
+                  <p>(${men.like})</p>
+                </div>
               </div>
             </div>`;
       } else {
         htmlWall +=
           `<div class="row">
-          <div class="col-12">
-            <div class="float-left">
-              <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
-            </div>
-            <div class="float-left ml-3">
-              <p class="nameUser">${men.name || men.email}</p>
-              <p class="datePost">${date} h</p>
+            <div class="col-12">
+              <div class="float-left">
+                <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+              </div>
+              <div class="float-left ml-3">
+                <p class="nameUser">${men.name || men.email}</p>
+                <p class="datePost">${date} h</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <textarea disabled class="form-control able" id="${message.id}" rows="3">${men.message}</textarea>
+          <div class="row">
+            <div class="col-12">
+              <textarea disabled class="form-control able" id="${message.id}" rows="3">${men.message}</textarea>
             </div>
-        </div>`;
+          </div>
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div>
+                <button type="button" class="btn btn-primary float-right" onclick="window.controller.counterLike('${message.id}','${men.like}')">
+                  <img src="img/manzana.png" class="imgApple" alt="apple">
+                </button>
+                <p>(${men.like})</p>
+              </div>
+            </div>
+          </div>`;
       };
     });
 
@@ -375,4 +391,17 @@ window.view.infoEdit = () => {
   </div>
 </div>
 </div>`;
+  window.view.writeDataProfile();
+};
+
+
+// función para escribir datos existentes en perfil
+window.view.writeDataProfile = () => {
+  console.log(window.userData);
+
+  document.getElementById('nameUserEdit').value = window.userData.displayName;
+  console.log(window.userData.displayName);
+
+  document.getElementById('emailUserEdit').value = window.userData.email;
+  console.log(window.userData.email);
 };

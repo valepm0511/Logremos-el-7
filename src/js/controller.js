@@ -134,3 +134,9 @@ window.controller.deleteMessage = (id) => {
 window.controller.editMessage = (id) => {
   window.data.editMessage(id);
 };
+
+
+// función para agregar like
+window.controller.counterLike = (id, oldLike) => {
+  window.data.counterLike(id, oldLike);
+};

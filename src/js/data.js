@@ -123,10 +123,11 @@ window.data.editMessage = (id) => {
 
 // función para ingresar informacion de perfil de usuario
 window.data.infoEdit = () => {
+
   const firestore = firebase.firestore();
 
-  let nameUserEdit = document.getElementById('nameUserEdit').value;
-  let emailUserEdit = document.getElementById('emailUserEdit').value;
+  // let nameUserEdit = document.getElementById('nameUserEdit').value;
+  // let emailUserEdit = document.getElementById('emailUserEdit').value;
   let ageUserEdit = document.getElementById('ageUserEdit').value;
   let biographyUserEdit = document.getElementById('biographyUserEdit').value;
 
@@ -141,8 +142,8 @@ window.data.infoEdit = () => {
       window.idUsers = docRef.id;
       console.log(window.idUsers);
 
-      document.getElementById('nameUserEdit').value = '';
-      document.getElementById('emailUserEdit').value = '';
+      // document.getElementById('nameUserEdit').value = '';
+      // document.getElementById('emailUserEdit').value = '';
       document.getElementById('ageUserEdit').value = '';
       document.getElementById('biographyUserEdit').value = '';
       var docRef = firestore.collection('users').doc(docRef.id);
@@ -164,5 +165,23 @@ window.data.infoEdit = () => {
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
+    });
+};
+
+
+// función que agrega likes
+window.data.counterLike = (id, oldLike) => {
+  const firestore = firebase.firestore();
+  const likeRef = firestore.collection('wall').doc(id);
+
+  return likeRef.update({
+    like: parseInt(oldLike) + 1
+  })
+    .then(() => {
+      window.view.wall();
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
     });
 };
