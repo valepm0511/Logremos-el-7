@@ -194,7 +194,6 @@ window.data.dataCollection = () => {
 
   docRef.get().then((doc) => {
     if (doc.exists) {
-      console.log('Document data:', doc.data());
       window.view.showProfile(doc.data());
     } else {
       window.view.infoEdit();
@@ -221,3 +220,9 @@ window.data.counterLike = (id, oldLike) => {
       console.error('Error updating document: ', error);
     });
 };
+
+
+// // función para obtener URL imagen storage
+// window.data.imageProfile = () => {
+
+// }

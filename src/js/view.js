@@ -3,6 +3,9 @@ window.view = {};
 window.view.wall = () => {
   var element = document.getElementById('counter');
   element.classList.remove('containerLogin');
+
+  const imageUser = window.userData.photoURL || 'img/Avatar-facebook.png';
+
   const wallMessage = window.controller.wall();
   let htmlWall =
     `<div class="container-fluid">
@@ -36,7 +39,7 @@ window.view.wall = () => {
               <div class="row">
                 <div class="col-12">
                   <div class="float-left">
-                  <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+                  <img src="${imageUser}" alt="avatar" class="img-fluid imgAvatar ">
                 </div>
               <div class="float-left ml-3">
               <p class="nameUser">${window.userData.displayName || window.userData.email}</p>
@@ -51,6 +54,8 @@ window.view.wall = () => {
   wallMessage.then(messages => {
     messages.forEach(message => {
       const men = message.data();
+
+      let imageMessage = men.photoURL || 'img/Avatar-facebook.png';
 
       // formato fecha
       const options = {
@@ -70,7 +75,7 @@ window.view.wall = () => {
           `<div class="row">
             <div class="col-12">
               <div class="float-left">
-                <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+                <img src="${imageMessage}" alt="avatar" class="img-fluid imgAvatar ">
             </div>
                 <div class="float-left ml-3">
                   <p class="nameUser">${men.name || men.email}</p>
@@ -104,7 +109,7 @@ window.view.wall = () => {
           `<div class="row">
             <div class="col-12">
               <div class="float-left">
-                <img src="img/Avatar-facebook.png" alt="avatar" class="img-fluid imgAvatar ">
+                <img src="${imageMessage}" alt="avatar" class="img-fluid imgAvatar ">
               </div>
               <div class="float-left ml-3">
                 <p class="nameUser">${men.name || men.email}</p>
@@ -273,7 +278,7 @@ window.view.infoEdit = () => {
               <div class="navbar-nav flex-lg-column navStyle">
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
                 <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.showProfile()">
+                <button type"button" class="btnNav text-left col-12" onclick="window.controller.spellProfile()">
                 <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
                 <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
@@ -477,7 +482,14 @@ window.view.writeDataProfile = () => {
 
 
 window.view.showProfile = (dataUserProfile) => {
+
+  // const storage = firebase.storage();
+  // const storageRef = storage.ref();
+  // const imagesRef = storageRef.child('avatar/avatar.jpg');
+  // imagesRef.getDownloadURL().then(url => {
+
   let divProfile = document.getElementById('counter');
+  const imageUser = window.userData.photoURL || 'img/Avatar-facebook.png';
   divProfile.innerHTML =
     `<div class="container-fluid">
       <div class="row">
@@ -493,7 +505,7 @@ window.view.showProfile = (dataUserProfile) => {
               <div class="navbar-nav flex-lg-column navStyle">
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
                 <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.showProfile()">
+                <button type"button" class="btnNav text-left col-12" onclick="window.controller.spellProfile()">
                 <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
                 <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
@@ -509,7 +521,7 @@ window.view.showProfile = (dataUserProfile) => {
           <h1 class="display-4 text-center text-white titlePerfil">Información Personal</h1>
           <div class="row justify-content-center">
             <div class="mt-3 imgPerfilEdit">
-              <img src="img/Avatar-facebook.png" class="img-fluid">
+              <img src="${imageUser}" class="img-fluid">
             </div>
           </div>
           <div class="row justify-content-center">

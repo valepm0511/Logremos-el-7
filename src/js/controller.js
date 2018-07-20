@@ -78,7 +78,6 @@ window.controller.activeUser = () => {
 window.controller.ingress = () => {
   let connectMail = document.getElementById('connectMail').value;
   let connectPassword = document.getElementById('connectPassword').value;
-  console.log(connectMail, connectPassword);
 
   // llama a ingress en firebase
   window.data.ingress(connectMail, connectPassword);
@@ -112,10 +111,15 @@ window.controller.publishMessage = () => {
   };
 
   // función que cuando obtenga respuesta de datos de muro vuelve a escribir el muro
-  window.data.writeWall(dataWall).then(() => {
-    window.view.wall();
-  });
+  if (textareaMessageWall.length > 0) {
+    window.data.writeWall(dataWall).then(() => {
+      window.view.wall();
+    });
+  } else {
+    alert('Debe ingresar texto');
+  }
 };
+
 
 // función para editar mensajes
 window.controller.editMessage = (id) => {
@@ -145,5 +149,4 @@ window.controller.editProfile = () => {
 // función para escribir perfil
 window.controller.spellProfile = () => {
   window.data.dataCollection();
-  window.view.showProfile(profileCollection);
 };
