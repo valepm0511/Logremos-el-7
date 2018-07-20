@@ -64,14 +64,29 @@ Considerando las cualidades y lo ofrecido por cada aplicación, findTeach fue la
 Nuestra entrevista se enfocó en la experiencia de nuestros posibles usuarios para idear nuestra app de manera en la que el intercambio de conocimiendo se genere de la manera más óptima posible. 
 Una observación importante en la que coinciden todos los entrevistados es que, para ellos es importante el interés (o amor por el conocimiento, como mencionó un entrevistado), tanto por parte de profesores como por parte del alumno. Para prevenir situaciones incómodas como las descritas en la entrevista, esperamos poder desarrollar en nuestra interface un espacio en el cual sea visible ese interés, a través de la data que registren los posibles usuarios.
 
-Encuesta:
-[https://docs.google.com/forms/d/1AcmUWJ6EbFJvwO8Mam7XHUFcl2eyrq88XDusFd3eXUg/prefill]
+### Conclución
 
-Guía de entrevistas:
-[https://docs.google.com/document/d/1d7tMGaJuhabsSTLetdZoHSJZrzxRksBSM-W8PC3iWBI/edit?usp=sharing]
+Según la investigación y entrevistas realizadas por el lado de los profesores nos encontramos generalmente con jóvenes estudiantes universitarios entre 20 y 30 años que realizan clases particulares y reforzamientos a alumnos de enseñanza media principalmente.
 
-Entrevistas:
-[https://docs.google.com/document/d/1XPUS9EaGQ08Rnm_ULuJXqA0-Qn_xf5akVpcNTNQQlMc/edit?usp=sharin]
+Dentro de los datos que llaman la atención podemos encontrar que no están inscritos en los portales/aplicaciones TutorDoctor, SacateUn7 y TutorUChile, pero sí tienen conocimiento de su existencia, principalmente porque no ha sido necesario para ellos hasta el momento, ya que los alumnos que consiguen o llegan a ellos son a través de redes sociales y principalmente recomendaciones de terceras personas, como han sido contactados a través de esos métodos, ellos consideran que fuera de los portales antes mencionados la mejor forma de promocionar sus clases es a través del boca a boca y redes sociales. 
+
+En general su experiencia realizando clases particulares ha sido bastante satisfactoria, como ellos buscaban, pero sí han tenido malas experiencias, entre las cuales se destacan el poco interés, atención a la clase y la poca tolerancia a la frustración, lo que en un caso particular gatilló un evento violento, pero más han sido las buenas experiencias, en las cuales encontramos patrones repetitivos como mejoría considerable en las notas de sus alumnos junto con el sincero agradecimiento de sus padres.
+
+Para ellos sus características más valorables a la hora realizar un servicio de enseñanza es la cercanía, interpretación, paciencia y empatía para lograr un buen resultado, todo esto hacen que por lo general no tengan un prototipo de alumno ideal, si no que, un alumno que tenga las ganas de aprender y que tenga asumido las materias en las cuales presenta dificultad o fortalezas. 
+ 
+Finalmente coinciden en que ellos no tienen requisitos para aceptar o no a un alumno, pero que sí necesitan un alumno con actitud y reales ganas de aprender y un factor no despreciable también es que sus padres no tengan expectativas falsas en la relación tiempo y conocimiento adquirido.
+
+Por otra parte, los alumnos tampoco están registrados en los portales/aplicaciones de tutoría que hay en la web ya que no ha sido necesario, debido a que prefieren las redes sociales o ir directamente a una institución física para concretar sus planes de estudio, en general las experiencias tal cual como han sido con los profesores ha sido buena y satisfactoria. 
+
+La frecuencia con la que se han buscado las tutorías ha sido por lo general semanalmente, siguiendo la misma tendencia de los profesores en elegir a su “alumno ideal” los alumnos también comentan que un profesor con real interés en enseñar y amor por el conocimiento es algo fundamental para ser un “profe ideal”, esto sumado a las buenas experiencias que han tenido principalmente en sentir que la clase es totalmente personalizada para cada uno de ellos; no se han presentado malas experiencias por el lado del alumno, el cual manifiesta como característica favorable la puntualidad y el real interés en aprender, punto en común con los profesores que justamente es lo que buscan en los alumnos.
+
+### Lincks
+
+[Encuesta](https://docs.google.com/forms/d/1AcmUWJ6EbFJvwO8Mam7XHUFcl2eyrq88XDusFd3eXUg/prefill)
+
+[Guía de entrevistas](https://docs.google.com/document/d/1d7tMGaJuhabsSTLetdZoHSJZrzxRksBSM-W8PC3iWBI/edit?usp=sharing)
+
+[Entrevistas](https://docs.google.com/document/d/1XPUS9EaGQ08Rnm_ULuJXqA0-Qn_xf5akVpcNTNQQlMc/edit?usp=sharin)
 
 ## Guía de instalación
 

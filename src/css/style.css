@@ -18,30 +18,25 @@
 	width: 24px;
 	height: 24px;
 }
-.btnApple{
+
+.btnApple {
 	background: transparent;
-    border: none;
-    margin-top: 12px;
+	border: none;
+	margin-top: 12px;
+	outline: none !important;
 }
-.btnApple:hover{
+
+.btnApple:hover {
 	background: transparent;
 	border: none;
 	margin-top: 12px;
 }
 
-.appleLike{
+.appleLike {
 	float: right;
-    margin-top: 20px;
-    color: #ffffff;
+	margin-top: 20px;
+	color: #ffffff;
 }
-
-.appleLike:focus{
-    border: none;
-}
-/* .containerWall img {
-	width: 100vw;
-	height: 100vh;
-}*/
 
 .containerLogin img {
 	width: 100vw;
@@ -152,7 +147,7 @@
 
 .imgAvatar {
 	border-radius: 100px;
-	width: 90px !important;
+	width: 70px !important;
 	margin-top: 35px;
 	margin-bottom: 10px;
 }
@@ -177,16 +172,20 @@
 	margin-top: 10px;
 	border-radius: 10px;
 }
-.titlePerfil{
+
+.titlePerfil {
 	font-size: 30px;
 }
 
-.imgPerfilEdit img{
+.imgPerfilEdit img {
 	border-radius: 100%;
 	width: 200px;
+	-webkit-box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
 }
 
-.infoPerfil{
+.infoPerfil {
 	font-size: 20px;
 	color: #ffffff;
 	margin-bottom: 2px;
@@ -204,27 +203,54 @@
 	height: 100vh;
 }
 
-.btnNav{
+.btnNav {
 	background: transparent;
-    border: none;
-	color: #ffffff;
+	border: none;
+	color: #482E22;
 	font-size: 18px;
 	cursor: pointer;
-	outline:none;
+	font-weight: 600;
 }
 
-.btnStyle{
+.btnStyle {
 	background-color: #C96662;
 	border: #C96662;
 }
 
-.btnStyle:hover{
+.btnStyle:hover {
 	background-color: #899764;
 	border: #899764;
 }
 
-.imgFondo{
-	background-image: url('../img/imgFondo.jpg')
+.imgFondo {
+	background-image: url('../img/fondo2.jpg');
+}
+
+.introBiography {
+	font-family: "CoalhandLukeTRIAL";
+	font-size: 25px;
+	margin-bottom: -10px;
+	margin-top: 15px;
+	color: #79B7FD;
+}
+
+.menuStyle {
+	color: #482E22;
+	font-size: 25px;
+}
+
+.styleBiography {
+	color: #fff!important;
+	border: 1px #fff solid;
+	padding: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 24px -2px rgba(0, 0, 0, 0.75);
+}
+
+.iconStyle {
+	background: #482E22;
 }
 
 @media (min-width: 992px) {

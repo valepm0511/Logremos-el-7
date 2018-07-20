@@ -13,8 +13,8 @@ window.view.wall = () => {
        <!--sidebar-->
         <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky imgFondo">
           <nav class="navbar navbar-expand-lg flex-lg-column">
-             <a class="navbar-brand" href="#">Menú</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            <a class="navbar-brand" href="#"><span class="menuStyle">Menú</span></a>
+            <button class="navbar-toggler iconStyle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -276,14 +276,14 @@ window.view.infoEdit = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
-                <i class="fas fa-home pr-3 py-3"></i>Home</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.controller.spellProfile()">
-                <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
-                <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
-                <button type"button" class="btnNav text-left col-12" onclick="window.data.logOut()">
-                <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.view.wall()">
+                  <i class="fas fa-home pr-3 py-3"></i>Home</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.controller.spellProfile()">
+                  <i class="fas fa-user pr-3 py-3"></i> Perfil</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.view.infoEdit()">
+                  <i class="fas fa-pencil-alt pr-3 py-3"></i>Editar Perfil</button>
+                <button type "button" class="btnNav text-left col-12" onclick="window.data.logOut()">
+                  <i class="fas fa-sign-out-alt pr-3 py-3"></i>Cerrar Sesión</button>
               </div>
             </div>
           </nav>
@@ -402,40 +402,14 @@ window.view.infoEdit = () => {
                           <span class="text-white">Superior</span>
                         </label>
                       </div>
+                      <div class="row mb-5">
+                        <div class="col-5">
+                          <button type="button" class="btn btn-primary btnStyle" onclick="window.controller.editProfile()">Guardar Información</button>
+                        </div>
+                      </div>
                     </div>
                   </form>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8 col-12">
-                <label class="display-4 text-white ">Nivel Educacional:</label>
-                <form>
-                  <div class="form-group">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" class="mr-2" value="">
-                        <span class="text-white">Básica</span>
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" class="mr-2" value="">
-                        <span class="text-white">Medio</span>
-                      </label>
-                    </div>
-                    <div class="checkbox disabled">
-                      <label>
-                        <input type="checkbox" class="mr-2" value="">
-                        <span class="text-white">Superior</span>
-                      </label>
-                    </div>
-                    <div class="row mb-5">
-                      <div class="col-5">
-                        <button type="button" class="btn btn-primary" onclick="window.controller.editProfile()">Guardar Información</button>
-                      </div>
-                    </div>
-                  </div>
               </div>
             </div>
           </div>
@@ -446,7 +420,7 @@ window.view.infoEdit = () => {
 };
 
 
-// función para mostrar alerta d confirmacion de eliminar mensaje
+// función para mostrar alerta de confirmacion de eliminar mensaje
 window.view.deleteMessage = (id) => {
   let divDelete = document.getElementById(`alert${id}`);
   divDelete.innerHTML =
@@ -481,27 +455,27 @@ window.view.writeDataProfile = () => {
 };
 
 
+// función para mostrar perfil de usuario
 window.view.showProfile = (dataUserProfile) => {
-
   // const storage = firebase.storage();
   // const storageRef = storage.ref();
   // const imagesRef = storageRef.child('avatar/avatar.jpg');
   // imagesRef.getDownloadURL().then(url => {
 
-  let divProfile = document.getElementById('counter');
   const imageUser = window.userData.photoURL || 'img/Avatar-facebook.png';
+  let divProfile = document.getElementById('counter');
   divProfile.innerHTML =
     `<div class="container-fluid">
-      <div class="row">
-        <!--sidebar-->
-        <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky">
-          <nav class="navbar navbar-expand-lg flex-lg-column">
-            <a class="navbar-brand" href="#">Menú</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="row">
+          <!--sidebar-->
+          <div class="col-lg-3 navbar-dark bg-dark sidebar sidebar-sticky imgFondo">
+            <nav class="navbar navbar-expand-lg flex-lg-column">
+              <a class="navbar-brand" href="#"><span class="menuStyle">Menú</span></a>
+              <button class="navbar-toggler iconStyle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav flex-lg-column navStyle">
                 <button type"button" class="btnNav text-left col-12" onclick="window.view.wall()">
                 <i class="fas fa-home pr-3 py-3"></i>Home</button>
@@ -522,22 +496,26 @@ window.view.showProfile = (dataUserProfile) => {
           <div class="row justify-content-center">
             <div class="mt-3 imgPerfilEdit">
               <img src="${imageUser}" class="img-fluid">
+              </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12" id="infoEditUser">
+                  <p class="text-center introBiography">Mi nombre es...</p>
+                  <p class="text-center infoPerfil mt-3">${dataUserProfile.name}</p>
+                  <p class="text-center introBiography">Mi email de contacto</p>
+                  <p class="text-center infoPerfil">${dataUserProfile.email}</p>
+                  <p class="text-center introBiography mb-2">Mi edad es</p>
+                  <p class="text-center infoPerfil">${dataUserProfile.age}</p>
+                  <p class="text-center introBiography mb-2">Te cuento algo sobre mi</p>
+                  <p class="text-center text-white styleBiography">${dataUserProfile.biography}</p>;
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-12">
+                </div>
+              </div>
+              <!-- textarea -->
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12" id="infoEditUser">
-              <p class="text-center infoPerfil mt-3">${dataUserProfile.name}</p>
-              <p class="text-center infoPerfil">${dataUserProfile.email}</p>
-              <p class="text-center infoPerfil">${dataUserProfile.age}</p>
-              <p class="text-center text-white">${dataUserProfile.biography}</p>;
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-md-8 col-12">
-            </div>
-          </div>
-          <!-- textarea -->
-        </div>
-      </div>
-    </div>`;
+        </div>`;
 };
